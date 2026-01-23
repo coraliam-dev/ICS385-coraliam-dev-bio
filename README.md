@@ -3,7 +3,6 @@ The Minimalist Coder: 50% coffee, 50% code. Just a human trying to compile a lif
 # ICS 385: Web Development - Professional Bio
 **Author:** Coraliam  
 **Course:** ICS 385 (Spring 2026)  
-**Professor:** [Insert Professor Name]
 
 ## 🌐 Live Project
 You can view the live version of my professional bio here: 
