@@ -1,0 +1,21 @@
+CORALIA MONTALVO - ICS385 BIO WEBSITE SUBMISSION
+================================================
+
+Course: ICS385 Spring 2026
+Assignment: Bio Website with CSS Stylesheet
+
+GitHub Repository URL:
+https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+
+Instructions for Accessing:
+1. Visit the GitHub URL above
+2. Click on "index.html" to view the code
+3. To view the rendered website: Go to the repository settings and enable GitHub Pages, or clone the repository and open index.html in your browser
+
+Project Details:
+- HTML bio page with personal information
+- Styled with custom CSS stylesheet
+- Responsive design with images and links
+- Contact section with email link
+
+Submitted: [TODAY'S DATE]
