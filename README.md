@@ -24,9 +24,3 @@ This repository contains my coursework and projects for ICS 385.
 - [dicee.html](./week3/dicee/dicee.html) - Game structure
 - [index.js](./week3/dicee/index.js) - Game logic and winner detection
 - [styles.css](./week3/dicee/styles.css) - Casino theme and animations
-
-**How to Play:**
-1. Click "ROLL DICE" to roll all three dice
-2. Highest number wins! 🎉
-3. If multiple players tie at the highest number, NO ONE wins that round
-4. Click "Play Again!" to try again
