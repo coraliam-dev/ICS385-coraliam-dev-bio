@@ -25,18 +25,9 @@ This repository contains my coursework and projects for ICS 385.
 - [index.js](./week3/dicee/index.js) - Game logic and winner detection
 - [styles.css](./week3/dicee/styles.css) - Casino theme and animations
 
- ## Simon Game Challenge 
+### Simon Game - Memory Challenge 🎮
 
-This folder contains the revised and beginner-friendly Simon Game for ICS 385, Spring 2026.
-
-## Features
-- Beginner guidance overlays and instructions
-- Practice Level 0 with 3 plays
-- Encouraging transitions and clear level progression
-- Modern, accessible UI
-
-## Files Included
-- `index.html` — Main HTML file
-- `game.js` — Game logic (JavaScript)
-- `styles.css` — Game styling (CSS)
-- `sounds/` — Sound files for game feedback
+**Files:**
+- [simon.html](./week3/simon/simon.html) - Game structure
+- [game.js](./week3/simon/game.js) - Game logic and sequence handler
+- [styles.css](./week3/simon/styles.css) - Colorful button styling and animations
