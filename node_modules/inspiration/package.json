@@ -1,0 +1,22 @@
+{
+  "name": "inspiration",
+  "version": "1.0.0",
+  "description": "provides inspirational messages",
+  "main": "app.js",
+  "scripts": {
+    "test": "inspiration()"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pborel/inspiration.git"
+  },
+  "keywords": [
+    "inspiration"
+  ],
+  "author": "pborel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pborel/inspiration/issues"
+  },
+  "homepage": "https://github.com/pborel/inspiration#readme"
+}
