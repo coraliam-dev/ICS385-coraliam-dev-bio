@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "famous-last-words": "^0.6.0",
+    "inspirational-quotes": "^2.0.1",
+    "popular-movie-quotes": "^1.2.4",
+    "superheroes": "^4.0.0",
+    "supervillains": "^4.0.0"
+  }
+}
