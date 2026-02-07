@@ -76,7 +76,7 @@ hero-hw4/
   This project generates QR codes from user input (URL or text) using Node.js and saves them as PNG images. It demonstrates using npm packages to create QR codes and includes sample outputs and instructions.
 
   ### Bitly QR Code Preview
-  ![Bitly QR Code](./week4/qrcode/BitlyQRcode.png)
+  <img src="./week4/qrcode/BitlyQRcode.png" alt="Bitly QR Code" width="200" />
 
   ## Setup
   Navigate to the qrcode folder and run:
