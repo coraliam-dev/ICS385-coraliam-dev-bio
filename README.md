@@ -48,7 +48,7 @@ This repository contains my coursework and projects for ICS 385.
 4. Each round adds a new color to the sequence
 5. Try to get the highest level possible! 🌟
 
-## Overview# Hero HW4 Project
+## Overview# Week 4 Hero HW4 Project
 This Node.js project generates and saves a random hero, villain, inspirational quote, popular movie quote, and famous last words to five individual text files. It uses five different npm packages to accomplish this:
 
 - `superheroes`: Generates a random superhero name
@@ -70,3 +70,51 @@ hero-hw4/
   ReadMe.md               # Project overview and instructions
   node_modules/           # Installed npm packages
 ```
+
+  # qrcode (ICS 385 Week 4 / Assignment 4b)
+  ## Overview
+  This project generates QR codes from user input (URL or text) using Node.js and saves them as PNG images. It demonstrates using npm packages to create QR codes and includes sample outputs and instructions.
+
+  ## Setup
+  Navigate to the qrcode folder and run:
+  ```
+  npm install
+  ```
+  ## How to Run
+  Run the main file:
+  ```
+  node index.js
+  ```
+  Or use:
+  ```
+  node solution.js
+  ```
+
+  ## New Features Added (Design)
+  1) Accepts user input for URL or text and generates a QR code image.
+  2) Supports multiple output formats (PNG, text file).
+  3) Includes sample QR codes for YouTube and Bitly links.
+  4) Modular code structure for easy extension.
+
+  ## Testing
+  - Test 1: Entered "https://youtube.com" as input
+    Expected: QR code PNG generated for YouTube URL
+    Actual: qr_youtube_com.png created successfully
+  - Test 2: Entered "https://bitly.com" as input
+    Expected: QR code PNG generated for Bitly URL
+    Actual: BitlyQRcode.png created successfully
+  - Test 3: Entered custom text
+    Expected: QR code PNG generated for text
+    Actual: qr_img.png created successfully
+
+  ICS 385 Week 4 Study Guide • Page 6
+
+  ## AI Attribution
+  - Tool(s) used: GitHub Copilot, ChatGPT
+  - Files/sections generated or modified by AI: index.js, solution.js, ReadMe.md, package.json
+  - What I personally changed/verified: Tested all code, verified output images, updated instructions and comments
+
+  ## Reflection (Manager Notes)
+  - What my manager requested: Build a QR code generator using Node.js, accept user input, and save QR codes as images
+  - What I learned: How to use npm packages for QR code generation, modularize Node.js code, and handle file outputs
+  - Next improvements I would make: Add web interface, support more image formats, improve error handling, automate tests
