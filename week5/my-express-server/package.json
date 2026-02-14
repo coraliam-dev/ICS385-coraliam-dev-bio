@@ -10,6 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.1"
   }
+=======
+    "express": "^4.22.1"
+  },
+  "keywords": [],
+  "type": "commonjs"
+>>>>>>> a1b1970b65d619aec3d146eb5b71d638becc25fc
 }

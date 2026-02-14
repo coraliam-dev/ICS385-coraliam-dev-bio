@@ -35,6 +35,20 @@ app.get("/f2c", function (req, res) {
   res.sendFile(__dirname + "/f2cCalc.html");
 });
 
+//This code is the GET route
+app.get("/VolCalc", function (req, res) {
+  res.sendFile(__dirname + "/VolCalculator.html");
+});
+
+//Volume Calculation Logic
+app.post("/VolCalc", function (req, res) {
+  let r = Number(req.body.radius);
+  let h = Number(req.body.height);
+  let volume = Math.PI * Math.pow(r, 2) * h;
+  //Formatted to 2 decimal places
+  res.send("The volume of the cylinder is " + volume.toFixed(2));
+});
+
 // Convert Fahrenheit to Centigrade Logic
 app.post("/f2c", function (req, res) {
   let fTemp = Number(req.body.fTemp);
