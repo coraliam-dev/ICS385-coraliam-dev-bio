@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ICS 385 Spring 2026
 
 This is the main page for Course ICS 385 Spring 2026
