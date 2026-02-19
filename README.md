@@ -156,7 +156,11 @@ Week 5 is about ExpressJS, which allows websites to display various web pages ba
 >>>>>>> a1b1970b65d619aec3d146eb5b71d638becc25fc
 >>>>>>>
 
+
 # Week 6 To-Do List Project
+
+## Overview
+This assignment for ICS385 Week 6 is about creating a web app with multiple to-do lists. You will build a Node.js and Express application that lets users manage separate lists for chores, camping, work, and general tasks. The project helps you practice routing, templating with EJS, and basic web development skills.
 
 Welcome! This project is for ICS385 Week 6. It lets you keep separate to-do lists for chores, camping, work, and a main list.
 
@@ -181,9 +185,3 @@ Welcome! This project is for ICS385 Week 6. It lets you keep separate to-do list
 ## How to Use
 - Type a new item in the box and click the + button to add it to the list
 - Click the links at the top to switch between lists
-
----
-## Overview
-This assignment for ICS385 Week 6 is about creating a web app with multiple to-do lists. You will build a Node.js and Express application that lets users manage separate lists for chores, camping, work, and general tasks. The project helps you practice routing, templating with EJS, and basic web development skills.
-
-
