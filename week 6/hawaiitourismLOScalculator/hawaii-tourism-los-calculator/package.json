@@ -1,0 +1,31 @@
+{
+  "name": "hawaii-los-web",
+  "version": "1.0.0",
+  "description": "Hawaii Tourism Length of Stay Calculator - Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "import": "node scripts/importData.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "hawaii",
+    "tourism",
+    "mongodb",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
