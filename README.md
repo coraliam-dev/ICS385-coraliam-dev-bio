@@ -186,55 +186,52 @@ Welcome! This project is for ICS385 Week 6. It lets you keep separate to-do list
 - Type a new item in the box and click the + button to add it to the list
 - Click the links at the top to switch between lists
 
-## Week 8: JSON & Secrets Projects
+# Week 8 - 5.2 JSON Assignment: basic-json
 
-This week covers working with JSON data, Express routing, and basic authentication concepts. The folder contains:
+## Overview
+This project demonstrates working with JSON data in a web application. It displays a searchable and filterable course catalog using data from a JSON file. The app is designed for ICS 385 Week 8, following all assignment deliverables and testing requirements.
 
-### 5.2 JSON Project
-- Node.js app for reading, displaying, and manipulating JSON data.
-- Main files: [index.js](./week8/5.2%20JSON/index.js), [views/index.ejs](./week8/5.2%20JSON/views/index.ejs)
-- Features:
-  - Loads and displays recipes from a JSON file
-  - Dynamic rendering with EJS templates
-  - Add, edit, or delete recipes (if implemented)
-- Setup:
-  1. `cd week8/5.2\ JSON`
-  2. `npm install`
-  3. `node index.js`
-  4. Visit `http://localhost:3000/`
+## File Structure
+```
+week8/basic-json/
+├── index.html
+├── styles.css
+├── course-catalog.js
+├── sample-data.json
+└── README.md
+```
 
-### 5.6 Secrets Project
-- Simple authentication and secrets app using Express and EJS.
-- Main files: [index.js](./week8/5.6%20Secrets%20Project/index.js), [views/index.ejs](./week8/5.6%20Secrets%20Project/views/index.ejs)
-- Features:
-  - User registration and login (basic, not secure for production)
-  - Submit and view anonymous secrets
-- Setup:
-  1. `cd week8/5.6\ Secrets\ Project`
-  2. `npm install`
-  3. `node index.js`
-  4. Visit `http://localhost:3000/`
+## Features
+- Loads and displays a course catalog from sample-data.json
+- Search courses by keyword (title, department, instructor, etc.)
+- Filter by department and credits
+- Responsive design for mobile and desktop
+- Handles empty data, invalid JSON, and missing properties gracefully
+- Well-commented code with meaningful variable names
 
-### basic-json
-- Example of working with JSON files and rendering data.
-- Main files: [course-catalog.js](./week8/basic-json/course-catalog.js), [sample-data.json](./week8/basic-json/sample-data.json)
-- Features:
-  - Reads and displays course data from JSON
-  - Simple HTML rendering
-- Setup:
-  1. `cd week8/basic-json`
-  2. `node course-catalog.js`
+## Setup Instructions
+1. Clone or download this repository.
+2. Navigate to the `week8/basic-json/` folder.
+3. Open `index.html` in your web browser (no server required).
 
-### weather-with-city-master
-- Weather app using city input and API calls.
-- Main file: [index.js](./week8/weather-with-city-master/index.js)
-- Features:
-  - Fetches weather data for a given city
-  - Displays results in the browser
-- Setup:
-  1. `cd week8/weather-with-city-master`
-  2. `npm install`
-  3. `node index.js`
-  4. Visit `http://localhost:3000/`
+## Sample Data
+- `sample-data.json` contains at least 8 courses across 3 departments (e.g., ICS, MATH, ENG).
+- You can expand this file to test with 50+ courses for performance testing.
 
-Each project folder includes its own README or instructions. See the week8 directory for more details and to run each project individually.
+## Testing Requirements
+- **Valid JSON:** App loads and displays all courses from a properly formatted JSON file.
+- **Invalid JSON:** App shows a clear error message if the JSON is malformed.
+- **Empty Data:** App displays a friendly message if there are no courses or missing properties.
+- **Search Functionality:** Test with various keywords, including edge cases (e.g., partial matches, case sensitivity).
+- **Filter Combinations:** Use department and credit filters together to refine results.
+- **Data Limits:** App remains responsive with large datasets (50+ courses).
+- **Mobile Testing:** Layout adapts for different screen sizes; test on phone/tablet.
+
+## Live Demo
+You can deploy this project to GitHub Pages for a live demo. To do so:
+1. Push the `week8/basic-json/` folder to your GitHub repository.
+2. In your repo settings, enable GitHub Pages and set the source to the `main` branch and `/week8/basic-json/` folder.
+3. Share the provided GitHub Pages URL for grading.
+
+---
+
