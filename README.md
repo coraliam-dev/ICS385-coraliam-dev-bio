@@ -228,10 +228,10 @@ week8/basic-json/
 - **Mobile Testing:** Layout adapts for different screen sizes; test on phone/tablet.
 
 ## Live Demo
-You can deploy this project to GitHub Pages for a live demo. To do so:
+[You can deploy this project to GitHub Pages for a live demo. To do so:
 1. Push the `week8/basic-json/` folder to your GitHub repository.
 2. In your repo settings, enable GitHub Pages and set the source to the `main` branch and `/week8/basic-json/` folder.
-3. Share the provided GitHub Pages URL for grading.
+3. Share the provided GitHub Pages URL for grading.](https://coraliam-dev.github.io/ICS385-coraliam-dev-bio/)
 
 ---
 
