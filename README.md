@@ -185,3 +185,56 @@ Welcome! This project is for ICS385 Week 6. It lets you keep separate to-do list
 ## How to Use
 - Type a new item in the box and click the + button to add it to the list
 - Click the links at the top to switch between lists
+
+## Week 8: JSON & Secrets Projects
+
+This week covers working with JSON data, Express routing, and basic authentication concepts. The folder contains:
+
+### 5.2 JSON Project
+- Node.js app for reading, displaying, and manipulating JSON data.
+- Main files: [index.js](./week8/5.2%20JSON/index.js), [views/index.ejs](./week8/5.2%20JSON/views/index.ejs)
+- Features:
+  - Loads and displays recipes from a JSON file
+  - Dynamic rendering with EJS templates
+  - Add, edit, or delete recipes (if implemented)
+- Setup:
+  1. `cd week8/5.2\ JSON`
+  2. `npm install`
+  3. `node index.js`
+  4. Visit `http://localhost:3000/`
+
+### 5.6 Secrets Project
+- Simple authentication and secrets app using Express and EJS.
+- Main files: [index.js](./week8/5.6%20Secrets%20Project/index.js), [views/index.ejs](./week8/5.6%20Secrets%20Project/views/index.ejs)
+- Features:
+  - User registration and login (basic, not secure for production)
+  - Submit and view anonymous secrets
+- Setup:
+  1. `cd week8/5.6\ Secrets\ Project`
+  2. `npm install`
+  3. `node index.js`
+  4. Visit `http://localhost:3000/`
+
+### basic-json
+- Example of working with JSON files and rendering data.
+- Main files: [course-catalog.js](./week8/basic-json/course-catalog.js), [sample-data.json](./week8/basic-json/sample-data.json)
+- Features:
+  - Reads and displays course data from JSON
+  - Simple HTML rendering
+- Setup:
+  1. `cd week8/basic-json`
+  2. `node course-catalog.js`
+
+### weather-with-city-master
+- Weather app using city input and API calls.
+- Main file: [index.js](./week8/weather-with-city-master/index.js)
+- Features:
+  - Fetches weather data for a given city
+  - Displays results in the browser
+- Setup:
+  1. `cd week8/weather-with-city-master`
+  2. `npm install`
+  3. `node index.js`
+  4. Visit `http://localhost:3000/`
+
+Each project folder includes its own README or instructions. See the week8 directory for more details and to run each project individually.
