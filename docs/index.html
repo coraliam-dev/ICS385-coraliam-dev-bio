@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UH Maui College Course Catalog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>UH Maui College Course Catalog</h1>
+    <p>Spring 2026 - Interactive Course Browser</p>
+  </header>
+  <main>
+    <section class="controls">
+      <input type="text" id="searchInput" placeholder="Search courses, instructors, topics...">
+      <select id="departmentFilter"></select>
+      <select id="creditsFilter"></select>
+      <button id="exportBtn">Export JSON</button>
+    </section>
+    <section id="statisticsSection">
+      <span id="totalCourses"></span> courses |
+      <span id="totalDepartments"></span> departments |
+      Avg Enrollment: <span id="averageEnrollment"></span>
+    </section>
+    <section id="coursesContainer" class="courses-grid"></section>
+  </main>
+  <div id="courseModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="modalClose" class="close-btn">×</span>
+      <h2 id="modalTitle"></h2>
+      <div><strong>Course Code:</strong> <span id="modalCode"></span></div>
+      <div><strong>Credits:</strong> <span id="modalCredits"></span></div>
+      <div><strong>Instructor:</strong> <span id="modalInstructor"></span></div>
+      <div><strong>Department:</strong> <span id="modalDepartment"></span></div>
+      <div><strong>Description:</strong> <span id="modalDescription"></span></div>
+      <div><strong>Topics:</strong>
+        <ul id="modalTopics"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="course-catalog.js"></script>
+</body>
+</html>
