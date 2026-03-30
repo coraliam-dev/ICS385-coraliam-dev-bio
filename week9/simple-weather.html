@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Hawaii Weather</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #e0f7fa; text-align: center; }
+        #weather { margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; max-width: 350px; }
+        img { vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <h1>Hawaii Weather</h1>
+    <form id="loc-form">
+        <input id="lat" value="20.738161" size="10" type="text"> Latitude
+        <input id="lon" value="-156.449735" size="11" type="text"> Longitude
+        <button>Get Weather</button>
+    </form>
+    <div id="weather"></div>
+    <script>
+    // IMPORTANT: For security, do not hardcode your API key here in production.
+    // Use a server to load the key from .env and proxy the request, or use the .env file for backend code.
+    const apiKey = ""; // API key should be loaded securely on the server side
+    const weatherDiv = document.getElementById('weather');
+    document.getElementById('loc-form').onsubmit = async function(e) {
+        e.preventDefault();
+        const lat = document.getElementById('lat').value.toString();
+        const lon = document.getElementById('lon').value.toString();
+        weatherDiv.textContent = 'Loading...';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('No data');
+            const d = await res.json();
+            weatherDiv.innerHTML = `
+                <h2>${d.name || 'Location'}</h2>
+                <img src='https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png' alt='icon'>
+                <div><strong>Description:</strong> ${d.weather[0].description}</div>
+                <div><strong>Temperature:</strong> ${d.main.temp} °C</div>
+                <div><strong>Humidity:</strong> ${d.main.humidity}%</div>
+                <div><strong>Wind Speed:</strong> ${d.wind.speed} m/s</div>
+                <div><strong>Cloudiness:</strong> ${d.clouds.all}%</div>
+            `;
+        } catch (err) {
+            weatherDiv.textContent = 'Error: ' + err.message;
+        }
+    };
+    // Load default
+    document.getElementById('loc-form').onsubmit(new Event('submit'));
+    </script>
+</body>
+</html>

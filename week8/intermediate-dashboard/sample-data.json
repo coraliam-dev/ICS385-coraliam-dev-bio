@@ -1,0 +1,78 @@
+{
+  "university": "UH Maui College",
+  "semester": "Spring 2026",
+  "departments": [
+    {
+      "code": "ICS",
+      "name": "Computer Science",
+      "courses": [
+        {
+          "courseCode": "ICS 101",
+          "title": "Digital Tools for the Information World",
+          "description": "Intro to digital tools and concepts for modern information work.",
+          "credits": 3,
+          "instructor": { "name": "Dr. Leilani Akana", "email": "leilani@hawaii.edu" },
+          "schedule": { "days": ["MW"], "time": "10:00-11:15", "capacity": 30, "enrolled": 28 },
+          "topics": ["Spreadsheets", "Presentations"]
+        },
+        {
+          "courseCode": "ICS 111",
+          "title": "Intro to Computer Science I",
+          "description": "Programming fundamentals using Java.",
+          "credits": 4,
+          "instructor": { "name": "Prof. Kai Lono", "email": "kai.lono@hawaii.edu" },
+          "schedule": { "days": ["TR"], "time": "13:00-14:15", "capacity": 25, "enrolled": 25 },
+          "topics": ["Java", "Algorithms"]
+        }
+      ]
+    },
+    {
+      "code": "MATH",
+      "name": "Mathematics",
+      "courses": [
+        {
+          "courseCode": "MATH 100",
+          "title": "Survey of Mathematics",
+          "description": "A broad overview of mathematical concepts.",
+          "credits": 3,
+          "instructor": { "name": "Dr. Nani Silva", "email": "nani@hawaii.edu" },
+          "schedule": { "days": ["MWF"], "time": "09:00-09:50", "capacity": 40, "enrolled": 35 },
+          "topics": ["Logic", "Probability"]
+        },
+        {
+          "courseCode": "MATH 241",
+          "title": "Calculus I",
+          "description": "Differential and integral calculus of one variable.",
+          "credits": 4,
+          "instructor": { "name": "Prof. Keahi Lee", "email": "keahi.lee@hawaii.edu" },
+          "schedule": { "days": ["TR"], "time": "11:30-12:45", "capacity": 35, "enrolled": 32 },
+          "topics": ["Derivatives", "Integrals"]
+        }
+      ]
+    },
+    {
+      "code": "ENG",
+      "name": "English",
+      "courses": [
+        {
+          "courseCode": "ENG 100",
+          "title": "Composition I",
+          "description": "Introduction to college writing and composition.",
+          "credits": 3,
+          "instructor": { "name": "Dr. Malia Wong", "email": "malia.wong@hawaii.edu" },
+          "schedule": { "days": ["MWF"], "time": "11:00-11:50", "capacity": 30, "enrolled": 27 },
+          "topics": ["Essays", "Research"]
+        },
+        {
+          "courseCode": "ENG 272",
+          "title": "Introduction to Literature: Culture and Identity",
+          "description": "Explores literature with a focus on culture and identity.",
+          "credits": 3,
+          "instructor": { "name": "Prof. Kimo Kealoha", "email": "kimo.kealoha@hawaii.edu" },
+          "schedule": { "days": ["TR"], "time": "14:30-15:45", "capacity": 25, "enrolled": 20 },
+          "topics": ["Poetry", "Short Stories"]
+        }
+      ]
+    }
+  ]
+}

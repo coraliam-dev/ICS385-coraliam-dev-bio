@@ -1,0 +1,199 @@
+/* ========== GENERAL PAGE STYLING ========== */
+/* Styles applied to the entire body/page */
+body {
+  color: #40514e;              /* Text color: dark grayish-blue for all text */
+  margin: 0;                   /* Remove default margins around the page */
+  text-align: center;          /* Center-align all text by default */
+  font-family: "Merriweather", serif;  /* Use Merriweather font; serif is backup */
+}
+
+/* Styles for the largest heading (h1) - main title */
+h1 {
+  color: #66bfbf;              /* Turquoise color */
+  font-size: 5.625rem;         /* Very large: 5.625x the base font size (~90px) */
+  margin: 50px auto 0 auto;    /* 50px top, auto left/right (centers it), 0 bottom */
+  font-family: "Sacramento", cursive;  /* Fancy cursive font for decorative heading */
+}
+
+/* Styles for secondary headings (h2) */
+h2 {
+  color: #66bfbf;              /* Same turquoise as h1 */
+  font-family: "Montserrat", sans-serif;  /* Modern, clean sans-serif font */
+  font-size: 2.5rem;           /* Medium-large: 2.5x base font size (~40px) */
+  font-weight: normal;         /* Not bold, standard weight */
+  padding-bottom: 10px;        /* Add 10px space below the heading */
+}
+
+/* Styles for tertiary headings (h3) - smaller than h2 */
+h3 {
+  color: #11999e;              /* Darker teal/cyan color (different from h1/h2) */
+  font-family: "Montserrat", sans-serif;  /* Same clean font as h2 */
+}
+
+/* Styles for all paragraphs */
+p {
+  line-height: 2;              /* Line spacing: 2x the font size (creates breathing room) */
+}
+
+/* Styles for horizontal line dividers */
+hr {
+  border: dotted #eaf6f6 6px;  /* Light blue dotted border, 6px thick */
+  border-bottom: none;         /* Remove bottom border (creates dotted line effect) */
+  width: 4%;                   /* Make it narrow: only 4% of container width */
+  margin: 100px auto;          /* 100px space above/below, centered horizontally */
+}
+
+/* Styles for all links */
+a {
+  color: #11999e;              /* Teal color for links */
+  font-family: "Montserrat", sans-serif;  /* Clean sans-serif font */
+  margin: 10px 20px;           /* 10px vertical, 20px horizontal spacing */
+  text-decoration: none;       /* Remove underline from links */
+}
+
+/* Styles when user hovers over a link (interactive feedback) */
+a:hover {
+  color: #eaf6f6;              /* Change to light blue when hovered */
+}
+
+/* ========== CONTAINER/LAYOUT STYLING ========== */
+/* Styles for the top section (introduction area) */
+.top-container {
+  background-color: #e4f9f5;   /* Light cyan/turquoise background */
+  position: relative;          /* Allow absolute positioning of child elements */
+  padding-top: 100px;          /* Add 100px space at the top */
+}
+
+/* Styles for the middle section (main content area) */
+.middle-container {
+  margin: 100px 0;             /* 100px space above and below this section */
+}
+
+/* Styles for the bottom section (footer area) */
+.bottom-container {
+  background-color: #66bfbf;   /* Turquoise background */
+  padding: 50px 0 20px;        /* 50px top padding, 0 left/right, 20px bottom */
+}
+
+/* Styles for skill rows (though not currently used in HTML) */
+.skill-row {
+  width: 50%;                  /* Take up half the container width */
+  margin: 100px auto 100px auto;  /* 100px vertical spacing, centered horizontally */
+  text-align: left;            /* Left-align text (instead of centered) */
+}
+
+/* ========== SPECIFIC ELEMENT STYLING ========== */
+/* Styles for the word "pro" in the title */
+.pro {
+  text-decoration: underline;  /* Underline the text */
+}
+
+/* Styles for the introduction paragraph */
+.intro {
+  width: 30%;                  /* Limit width to 30% (narrower = easier to read) */
+  margin: auto;                /* Center it horizontally */
+}
+
+/* Styles for the contact message */
+.contact-message {
+  width: 40%;                  /* 40% width for readability */
+  margin: 40px auto 60px;      /* 40px top, centered, 60px bottom */
+}
+
+/* Styles for copyright text in footer */
+.copyright {
+  color: #eaf6f6;              /* Light blue color */
+  font-size: 0.75rem;          /* Smaller text: 75% of base size */
+  padding: 20px 0;             /* 20px vertical padding, no horizontal */
+}
+
+/* ========== DECORATIVE IMAGE POSITIONING ========== */
+/* Styles for top cloud image - positioned at specific coordinates */
+.top-cloud {
+  position: absolute;          /* Remove from normal flow, position exactly */
+  right: 300px;                /* 300px from the right edge */
+  top: 40px;                   /* 40px from the top */
+}
+
+/* Styles for bottom cloud image */
+.bottom-cloud {
+  position: absolute;          /* Exactly positioned (not with normal flow) */
+  left: 250px;                 /* 250px from the left edge */
+  bottom: 300px;               /* 300px from the bottom */
+}
+
+/* Styles for code/typing image (though not currently used in HTML) */
+.code-img {
+  width: 25%;                  /* 25% of container width */
+  float: left;                 /* Let text wrap around it on the right */
+  margin-right: 30px;          /* 30px space to the right of image */
+}
+
+/* Styles for chilli/hot wings image */
+.chilli-img {
+  width: 50%;                  /* 50% of container width */
+  margin-left: 30px;           /* 30px space to the left */
+}
+
+/* ========== INTERACTIVE ELEMENTS ========== */
+/* Styles for the "CONTACT ME" button */
+.btn {
+  background: #11cdd4;         /* Fallback solid color (bright cyan) */
+  /* Multiple versions of gradient for different browsers: */
+  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);  /* Safari/Chrome */
+  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);    /* Firefox */
+  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);     /* Internet Explorer */
+  background-image: -o-linear-gradient(top, #11cdd4, #11999e);      /* Opera */
+  background-image: linear-gradient(to bottom, #11cdd4, #11999e);   /* Modern standard */
+  /* (Gradient creates a 3D effect, going from light to dark cyan) */
+  
+  -webkit-border-radius: 8;    /* Round corners for Safari/Chrome */
+  -moz-border-radius: 8;       /* Round corners for Firefox */
+  border-radius: 8px;          /* Modern standard: 8px rounded corners */
+  
+  font-family: "Montserrat", sans-serif;  /* Clean sans-serif font */
+  color: #ffffff;              /* White text */
+  font-size: 20px;             /* Large text */
+  padding: 10px 20px 10px 20px;  /* Spacing inside button: 10px vertical, 20px horizontal */
+  text-decoration: none;       /* Remove underline (since button is a link) */
+}
+
+/* Button styling when user hovers over it (interactive feedback) */
+.btn:hover {
+  background: #30e3cb;         /* Change to lighter cyan */
+  /* Update gradient to lighter colors on hover: */
+  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);  /* Safari/Chrome */
+  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);    /* Firefox */
+  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);     /* Internet Explorer */
+  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);      /* Opera */
+  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);   /* Modern standard */
+  text-decoration: none;       /* Keep no underline */
+}
+
+/* ========== LAYOUT SYSTEM ========== */
+/* Styles for parent container that uses CSS Grid */
+.parent {
+  display: grid;               /* Use CSS Grid layout system */
+  grid-template-columns: 0.5fr 1fr;  /* 2 columns: first is 0.5x width, second is 1x width */
+  grid-template-rows: repeat(1, 1fr);  /* 1 row of equal height */
+  width: 50%;                  /* Container takes 50% of page width */
+  margin: 100px auto 0 auto;   /* 100px top space, centered, 0 bottom */
+  text-align: left;            /* Left-align content (overrides body center alignment) */
+  row-gap: 2rem;               /* 2rem (32px) space between rows */
+}
+
+/* ========== COMMENTED OUT GRID POSITIONING ========== */
+/* These CSS rules were commented out because the HTML was reorganized. */
+/* They show alternative grid positioning if needed in the future: */
+/* .typing {
+  grid-area: 1 / 1 / 3 / 3;     <- spans rows 1-3, columns 1-3
+}
+.coding {
+  grid-area: 1 / 1 / 2 / 2;     <- row 1, column 1
+}
+.chillies {
+  grid-area: 1 / 2 / 2 / 3;     <- row 1, column 2
+}
+.hot-wings {
+  grid-area: 2 / 1 / 3 / 2;     <- row 2, column 1
+} */

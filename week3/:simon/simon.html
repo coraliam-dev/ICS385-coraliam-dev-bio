@@ -1,0 +1,138 @@
+
+<!--
+  Simon Game - index.html
+  This is the main HTML file for the Simon Game project.
+  It sets up the structure of the game interface and links to the CSS and JavaScript files.
+  Comments and explanations are provided throughout to help new programmers understand and extend the code.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+  <meta charset="utf-8">
+  <!--
+    The <title> tag sets the name of the tab or window in the browser.
+    You can change it to anything you like.
+  -->
+  <title>Simon</title>
+
+  <!--
+    Link to the external CSS file for styling the game.
+    You can edit styles.css to change the look and feel.
+  -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    Import a fun retro font from Google Fonts for the game text.
+    You can change or remove this if you want a different font.
+  -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <!-- [AI-GENERATED] Main title and beginner guidance overlay -->
+  <h1 id="level-title">Press A Key to Start</h1>
+
+  <!-- [AI-GENERATED] Encouraging introduction overlay for all users -->
+  <div id="ai-intro-overlay" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.96); color: #FEF2BF; z-index: 3000; text-align: center; font-family: 'Press Start 2P', cursive;">
+    <div style="max-width: 600px; background: rgba(1,31,63,0.98); border-radius: 20px; padding: 2em; border: 2px solid #FEF2BF;">
+      <h2 style="color: #FEF2BF;">🎉 Welcome to Simon!</h2>
+      <p style="font-size: 1.1em;">You're about to play a fun and challenging memory game.<br><br>
+      <b>Can you beat all the levels?</b> Stay focused, believe in yourself, and have fun!<br><br>
+      <span style="color: #FFD700;">Every champion was once a beginner. You can win this!</span>
+      </p>
+      <button id="ai-close-intro" style="font-size: 1.2em; margin-top: 1em; padding: 0.5em 2em; border-radius: 10px; border: none; background: #FEF2BF; color: #011F3F; font-family: 'Press Start 2P', cursive; cursor: pointer;">Start Game</button>
+    </div>
+  </div>
+  <div id="ai-beginner-overlay" style="display: none; flex-direction: column; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.92); color: #FEF2BF; z-index: 2000; text-align: center; font-family: 'Press Start 2P', cursive;">
+    <div style="max-width: 600px; background: rgba(1,31,63,0.95); border-radius: 20px; padding: 2em; border: 2px solid #FEF2BF;">
+      <h2 style="color: #FEF2BF;">👋 Welcome, New Player!</h2>
+      <p style="font-size: 1.1em;">This is <b>Simon</b>, a memory game for all ages.<br><br>
+      <b>How to Play:</b><br>
+      1. Watch the colored buttons light up in a sequence.<br>
+      2. Click the buttons in the same order.<br>
+      3. Each level, the sequence gets longer and the game gets more competitive.<br><br>
+      <b>Tip:</b> Take your time at first. The game starts easy and gets harder as you go!
+      </p>
+      <button id="ai-close-beginner" style="font-size: 1.2em; margin-top: 1em; padding: 0.5em 2em; border-radius: 10px; border: none; background: #FEF2BF; color: #011F3F; font-family: 'Press Start 2P', cursive; cursor: pointer;">Got it! Let's Play</button>
+    </div>
+  </div>
+
+  <!--
+    Guidance section to help new players understand the game
+  -->
+  <div id="guidance-section" style="text-align: center; margin: 2em; padding: 1.5em; background: rgba(1, 31, 63, 0.3); border-radius: 10px; border: 2px solid #FEF2BF; color: #FEF2BF; font-family: 'Press Start 2P', cursive; font-size: 0.8em;">
+    <p><strong>📌 Game Info:</strong> The game has several levels. Progress through levels by clicking the colored buttons correctly. As you advance, the sequences get longer and the game gets more competitive!</p>
+  </div>
+
+  <!--
+    Tutorial overlay for new users. This will be shown at the start to explain the game.
+    It can be hidden with JavaScript after the tutorial is complete.
+  -->
+  <div id="tutorial-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); color: #fff; z-index: 1000; text-align: center; padding-top: 5vh;">
+    <div style="max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.7); border-radius: 20px; padding: 2em;">
+      <h2 style="font-family: 'Press Start 2P', cursive; color: #FEF2BF;">Welcome to Simon!</h2>
+      <p style="font-size: 1.1em;"><b>How to Play:</b><br>
+      This game has several levels that you progress through by clicking the colored buttons correctly.<br><br>
+      1. Watch the sequence of colors that lights up.<br>
+      2. Click the same color buttons in the same order.<br>
+      3. Each round, the sequence gets longer and more challenging.<br><br>
+      <b>Pro Tip:</b> As levels increase, the game gets more competitive, so stay focused!</p>
+      <button id="start-tutorial" style="font-size: 1.2em; margin-top: 1em; padding: 0.5em 2em; border-radius: 10px; border: none; background: #FEF2BF; color: #011F3F; font-family: 'Press Start 2P', cursive; cursor: pointer;">Start Tutorial</button>
+    </div>
+  </div>
+
+  <!--
+    The main container for the game buttons.
+    You can add more rows or buttons here if you want to extend the game.
+  -->
+  <div class="container">
+    <!--
+      Each row contains two colored buttons.
+      The buttons are divs styled with CSS and identified by unique IDs and classes.
+      You can add more colors by copying and modifying these blocks.
+    -->
+    <div class="row">
+      <!-- Green button -->
+      <div type="button" id="green" class="btn green">
+        <!-- Button content is empty; color and effects are handled by CSS and JavaScript -->
+      </div>
+
+      <!-- Red button -->
+      <div type="button" id="red" class="btn red">
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Yellow button -->
+      <div type="button" id="yellow" class="btn yellow">
+      </div>
+
+      <!-- Blue button -->
+      <div type="button" id="blue" class="btn blue">
+      </div>
+    </div>
+  </div>
+
+  <!--
+    jQuery is a JavaScript library that makes it easier to work with the DOM (HTML elements).
+    The game.js file uses jQuery, so we include it here from a CDN (Content Delivery Network).
+    If you want to use plain JavaScript instead, you can remove jQuery and update game.js accordingly.
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!--
+    Link to the main JavaScript file for the game logic.
+    You can open and edit game.js to change how the game works or add new features.
+  -->
+
+  <script src="game.js" charset="utf-8"></script>
+
+</body>
+
+
+</html>

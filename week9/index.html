@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaii Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Current Weather in Hawaii</h1>
+    <form id="location-form">
+        <label for="lat">Latitude:</label>
+        <input type="text" id="lat" name="lat" value="20.87" required>
+        <label for="lon">Longitude:</label>
+        <input type="text" id="lon" name="lon" value="-156.45" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather"></div>
+    <script src="weather.js"></script>
+</body>
+</html>
