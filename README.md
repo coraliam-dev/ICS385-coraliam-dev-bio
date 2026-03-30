@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+# Term Project
+
+This project contains the Mongoose property schema and a seed script for Maui properties.
+
+## Structure
+- `models/` — Mongoose schemas
+- `seed.js` — Seed script for MongoDB
+- `.gitignore` — Excludes sensitive files like `.env`
+
+## Setup
+1. Copy your `.env` file (with MongoDB URI) here, but do NOT commit it.
+2. Run `npm install` to install dependencies.
+3. Run `node seed.js` to seed the database.
+=======
 # ICS 385 Spring 2026
 
 This is the main page for Course ICS 385 Spring 2026
@@ -108,47 +123,19 @@ hero-hw4/
   ```
   npm install
   ```
-  ## How to Run
-  Run the main file:
-  ```
-  node index.js
-  ```
-  Or use:
-  ```
-  node solution.js
-  ```
+  # Term Project
 
-  ## New Features Added (Design)
-  1) Accepts user input for URL or text and generates a QR code image.
-  2) Supports multiple output formats (PNG, text file).
-  3) Includes sample QR codes for YouTube and Bitly links.
-  4) Modular code structure for easy extension.
+  This project contains the Mongoose property schema and a seed script for Maui properties.
 
-  ## Testing
-  - Test 1: Entered "https://youtube.com" as input
-    Expected: QR code PNG generated for YouTube URL
-    Actual: qr_youtube_com.png created successfully
-  - Test 2: Entered "https://bitly.com" as input
-    Expected: QR code PNG generated for Bitly URL
-    Actual: BitlyQRcode.png created successfully
-  - Test 3: Entered custom text
-    Expected: QR code PNG generated for text
-    Actual: qr_img.png created successfully
+  ## Structure
+  - `models/` — Mongoose schemas
+  - `seed.js` — Seed script for MongoDB
+  - `.gitignore` — Excludes sensitive files like `.env`
 
-  ICS 385 Week 4 Study Guide • Page 6
-
-  ## AI Attribution
-  - Tool(s) used: GitHub Copilot, ChatGPT
-  - Files/sections generated or modified by AI: index.js, solution.js, ReadMe.md, package.json
-  - What I personally changed/verified: Tested all code, verified output images, updated instructions and comments
-
-  ## Reflection (Manager Notes)
-  - What my manager requested: Build a QR code generator using Node.js, accept user input, and save QR codes as images
-  - What I learned: How to use npm packages for QR code generation, modularize Node.js code, and handle file outputs
-
-
-## Week 5: ExpressJS
-
+  ## Setup
+  1. Copy your `.env` file (with MongoDB URI) here, but do NOT commit it.
+  2. Run `npm install` to install dependencies.
+  3. Run `node seed.js` to seed the database.
 ### Overview
 Week 5 is about ExpressJS, which allows websites to display various web pages based on the URL. While we have worked on VS Code and GitHub for the past few weeks, we will learn about the online IDE - CodeSandbox.io.
 
@@ -235,3 +222,4 @@ week8/basic-json/
 
 ---
 
+>>>>>>> f25eaf9c02daed6a0a8641560843d4a1415118cb

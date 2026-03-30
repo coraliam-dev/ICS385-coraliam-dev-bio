@@ -1,8 +1,5 @@
-.DS_Store
-<<<<<<< HEAD
-**/.DS_Store
+
+.env
 node_modules/
-**/node_modules/
-=======
->>>>>>> a1b1970b65d619aec3d146eb5b71d638becc25fc
+.DS_Store
 week9/.env
