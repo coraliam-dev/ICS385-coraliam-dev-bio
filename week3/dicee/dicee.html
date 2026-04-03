@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- 
+  AI-GENERATED: DICEE GAME - HTML STRUCTURE
+  ==========================================
+  This HTML file creates the visual layout for a simple dice game where two players
+  roll virtual dice to determine a winner. The page structure follows standard HTML5 conventions.
+  
+  AI-GENERATED EDUCATIONAL NOTES FOR BEGINNERS:
+  - Modify the title in the <title> tag to change the browser tab name
+  - Add more <link> tags to import additional fonts or stylesheets
+  - Change the game heading text in the <h1> tag
+  - Add more player sections by duplicating the <div class="dice"> blocks
+  - Modify image sources to point to different dice images
+-->
+
+<html lang="en" dir="ltr">
+  <!-- 
+    AI-GENERATED: HEAD SECTION EXPLANATION
+    ======================================
+    Contains metadata and configuration for the page.
+    This section is NOT displayed on the page but provides important information to the browser
+  -->
+  <head>
+    <!-- 
+      AI-GENERATED: CHARSET (Character Set)
+      Specifies that this page uses UTF-8 encoding
+      This allows the page to correctly display international characters and emojis
+      Tip: Always include this as the first meta tag for security reasons
+    -->
+    <meta charset="utf-8">
+    
+    <!-- 
+      AI-GENERATED: TITLE TAG
+      Sets the text shown in the browser tab
+      This also appears in search results and browser history
+      Best Practice: Keep titles descriptive and under 60 characters
+    -->
+    <title>Dicee</title>
+    
+    <!-- 
+      AI-GENERATED: LINK TO CSS
+      Connects this HTML file to the stylesheet (styles.css)
+      The stylesheet controls all visual styling: colors, fonts, layout, spacing, etc.
+      Relationship: "stylesheet" means this CSS file styles this HTML document
+      Why separate CSS and HTML? Keeps content (HTML) separate from presentation (CSS)
+    -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 
+      AI-GENERATED: GOOGLE FONTS
+      Imports custom fonts from Google's font library
+      This example imports two fonts:
+        1. Indie+Flower: A casual, handwriting-style font
+        2. Lobster: A bold, decorative font for headings
+      To use different fonts: Visit fonts.google.com, select fonts, and copy the link here
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <!-- END OF HEAD SECTION -->
+  <!-- 
+    AI-GENERATED: BODY SECTION
+    Contains all visible content that displays on the page
+    Everything users see is inside the <body> tag
+  -->
+  <body>
+
+    <!-- 
+      AI-GENERATED: CONTAINER DIV
+      A wrapper that groups all game content
+      The class="container" connects this <div> to CSS styling in styles.css
+      This container ensures the game content is centered and properly formatted
+      
+      AI-GENERATED EXPLANATION - HOW CLASSES WORK:
+      - A CSS class is defined with a period (.) in the stylesheet: .container { ... }
+      - In HTML, we apply that class using: class="container"
+      - One class can be used on multiple elements throughout the page
+    -->
+    <div class="container">
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): GAME TITLE
+        Changed from "Refresh Me" to engaging "Let's Roll!" for better UX
+        This invites players to interact with the game
+      -->
+      <h1>🎲 Let's Roll! 🎲</h1>
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): WELCOME MESSAGE
+        Friendly casino-themed greeting to set the fun tone
+      -->
+      <p style="font-size: 1.8rem; margin: 15px 0; color: #FFD700;">Welcome to the High Roller's Dice Table! 🎰</p>
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): GAME INSTRUCTIONS
+        Added to help young players understand how to play
+        Clear, simple instructions with casino flair
+      -->
+      <div class="instructions">
+        <h2>How to Play:</h2>
+        <p>Click the "Roll Dice" button below to roll all three dice.</p>
+        <p>The player with the <strong>highest number wins</strong> and takes the prize! 💰</p>
+        <p>If two or more players roll the same highest number, <strong>NO ONE wins</strong> - try again!</p>
+        <p><strong>May the odds be ever in your favor! 🌟</strong></p>
+      </div>
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): RESULT DISPLAY
+        Shows game results in a prominent, easy-to-read area
+        Initially hidden, appears after player rolls
+      -->
+      <div class="result-display" id="resultDisplay"></div>
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): ROLL BUTTON
+        Makes it obvious to users how to play the game
+        No need to refresh the page anymore
+        Button uses onclick to trigger JavaScript function
+      -->
+      <button class="roll-button" onclick="rollDice()">🎲 ROLL DICE 🎲</button>
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): PLAYER SECTION
+        Added flex container for better responsive layout
+        Makes game suitable for all screen sizes
+      -->
+      <div class="players-container">
+        <!-- 
+          AI-GENERATED: PLAYER 1 DICE SECTION
+          Same structure as Player 2 and Player 3 for consistent styling
+        -->
+        <div class="dice">
+          <!-- 
+            AI-GENERATED: PLAYER LABEL
+            Simple text identifying which player this is
+            <p> tag = "paragraph" - used for text content
+            This text is styled by CSS to be large and gold
+          -->
+          <p>Player 1</p>
+          
+          <!-- 
+            AI-GENERATED: DICE IMAGE
+            Displays a PNG image of a dice
+            Attributes explained:
+            
+            class="img1": 
+              - Connects to CSS styling for Player 1's image
+              - Could be used in JavaScript to select and modify this specific image
+              - Multiple classes can be added: class="img1 dice-image"
+            
+            src="images/dice6.png":
+              - "src" = "source" (location of the image file)
+              - "images/" = folder where dice images are stored
+              - "dice6.png" = specific image file (dice showing 6)
+              - Currently shows 6 on page load; JavaScript changes this to random numbers
+              
+            AI-GENERATED EXTENSION IDEAS:
+            - Change src path if you move images to different folder
+            - Add alt text for accessibility: alt="Dice showing current roll"
+            - Add onclick event to roll dice on click instead of page refresh
+          -->
+          <img class="img1" src="images/dice6.png">
+        </div>
+        <!-- END OF PLAYER 1 SECTION -->
+
+      <!-- 
+        AI-GENERATED: PLAYER 2 DICE SECTION
+        Identical structure to Player 1, but for the second player
+        
+        The <div class="dice"> styling applies to BOTH players automatically
+        because they both use the same "dice" class
+        
+        class="img2":
+        - Different from img1 to allow different styling or JavaScript manipulation
+        - Example: You could make Player 2's image larger or different color
+      -->
+      <div class="dice">
+        <!-- AI-GENERATED: Player 2 label -->
+        <p>Player 2</p>
+        
+        <!-- 
+          AI-GENERATED: Player 2's dice image
+          Also starts at dice6.png but will be changed by JavaScript
+        -->
+        <img class="img2" src="images/dice6.png">
+      </div>
+      <!-- END OF PLAYER 2 SECTION -->
+
+      <!-- 
+        AI-GENERATED: PLAYER 3 DICE SECTION (NEW)
+        Added to support three-player dice game
+        Same structure as Player 1 and Player 2
+        
+        class="img3":
+        - Used to select and modify Player 3's image in JavaScript
+        - Allows unique styling for the third player if needed
+      -->
+      <div class="dice">
+        <!-- AI-GENERATED: Player 3 label -->
+        <p>Player 3</p>
+        
+        <!-- 
+          AI-GENERATED: Player 3's dice image
+          Also starts at dice6.png but will be changed by JavaScript
+        -->
+        <img class="img3" src="images/dice6.png">
+      </div>
+      <!-- END OF PLAYER 3 SECTION -->
+
+      </div>
+      <!-- END OF PLAYERS CONTAINER -->
+
+      <!-- 
+        AI-GENERATED (UX IMPROVEMENT): PLAY AGAIN BUTTON
+        Allows users to play again without page refresh
+        Much better user experience for young players
+      -->
+      <button class="play-again-button" onclick="rollDice()">Play Again!</button>
+
+    </div>
+    <!-- END OF CONTAINER -->
+
+    <!-- 
+      AI-GENERATED: SCRIPT TAG
+      Links to external JavaScript file
+      
+      src="index.js": Points to the file containing the game logic
+        - This file runs the code that generates random numbers
+        - It selects random dice images
+        - It determines and displays the winner
+      
+      charset="utf-8": Specifies character encoding for the JavaScript file
+        - Ensures special characters and emojis are handled correctly
+      
+      AI-GENERATED EXPLANATION - WHY SEPARATE HTML AND JAVASCRIPT?
+      - HTML = Structure and content (what's on the page)
+      - JavaScript = Behavior and interactivity (what happens when you interact)
+      - Keeping them separate makes code more organized and reusable
+      
+      AI-GENERATED EXECUTION ORDER:
+      1. Browser reads and displays all HTML content first
+      2. Then it executes the JavaScript code
+      3. JavaScript modifies the HTML content (changes dice images)
+      
+      AI-GENERATED EXTENSION IDEAS:
+      - Add more <script> tags to include additional JavaScript files
+      - Add event listeners in JavaScript for click events on dice
+      - Create functions to validate player input or keep score
+    -->
+    <script src="index.js" charset="utf-8"></script>
+
+    <!-- 
+      AI-GENERATED (UX IMPROVEMENT): FOOTER MOVED INSIDE BODY
+      Moved from after </body> to correct semantic HTML structure
+      Footer is now properly contained within the body element
+    -->
+    <footer>
+      🎲 Three Dice Game 🎲 | Have Fun! | www App Brewery com
+    </footer>
+
+  </body>
+      <!-- END OF BODY SECTION -->
+
+      <!-- 
+        AI-GENERATED: FOOTER
+        Usually appears at the bottom of the page
+        This is semantic HTML - using <footer> clearly identifies this as footer content
+        
+        TEXT: "www 🎲 App Brewery 🎲 com"
+        - Contains emojis (🎲 = dice emoji)
+        - Modified version of original branding/attribution
+        
+        AI-GENERATED NOTE: In this HTML file, footer is placed AFTER </body> which is technically incorrect
+        Better practice: Move footer inside <body> tag at the very end
+        
+        AI-GENERATED FIX INSTRUCTIONS:
+        Remove </body> above, move footer inside body, then add closing </body> after footer
+        
+        AI-GENERATED EXTENSION IDEAS:
+        - Add links to other pages
+        - Add copyright information
+        - Add contact information or social media links
+        - Add navigation menu
+      -->
+      <footer>
+        www 🎲 App Brewery 🎲 com
+      </footer>
+    </html>
+    <!-- END OF HTML DOCUMENT -->
