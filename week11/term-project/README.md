@@ -170,6 +170,6 @@ In Week 12, I will replace the EJS template with a React component-based marketi
 
 ---
 
-**Author:** Corita  
+**Author:** Coralia M 
 **Course:** ICS 385 — Spring 2026  
 **Week:** 11
