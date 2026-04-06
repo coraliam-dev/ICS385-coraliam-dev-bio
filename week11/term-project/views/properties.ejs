@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawaii Properties</title>
+</head>
+<body>
+  <h1>Hawaii Hospitality Properties</h1>
+
+  <% if (filters && (filters.island || filters.minRating || filters.maxRating)) { %>
+    <p><strong>Filters:</strong>
+      <% if (filters.island) { %> island=<%= filters.island %> <% } %>
+      <% if (filters.minRating) { %> minRating=<%= filters.minRating %> <% } %>
+      <% if (filters.maxRating) { %> maxRating=<%= filters.maxRating %> <% } %>
+    </p>
+  <% } %>
+
+  <% if (!properties || properties.length === 0) { %>
+    <p>No properties found.</p>
+  <% } else { %>
+    <ul>
+      <% properties.forEach(function(prop) { %>
+        <li>
+          <h3><%= prop.name %></h3>
+          <p>Island: <%= prop.island %></p>
+          <p>Type: <%= prop.type %></p>
+          <p><%= prop.description || 'No description available.' %></p>
+          <p>Reviews: <%= (prop.reviews && prop.reviews.length) || 0 %></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</body>
+</html>

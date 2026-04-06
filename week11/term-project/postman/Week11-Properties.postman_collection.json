@@ -1,0 +1,55 @@
+{
+  "info": {
+    "name": "Week11-Properties",
+    "_postman_id": "6d7b8d9e-1111-2222-3333-444455556666",
+    "description": "Week 11 required routes: GET /properties, GET /properties/:id, POST /properties/:id/reviews",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /properties (JSON)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/properties?format=json",
+          "host": ["{{baseUrl}}"],
+          "path": ["properties"],
+          "query": [{ "key": "format", "value": "json" }]
+        }
+      }
+    },
+    {
+      "name": "GET /properties/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/properties/{{propertyId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["properties", "{{propertyId}}"]
+        }
+      }
+    },
+    {
+      "name": "POST /properties/:id/reviews",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guestName\": \"Corita Tester\",\n  \"rating\": 5,\n  \"comment\": \"Beautiful stay and excellent service.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/properties/{{propertyId}}/reviews",
+          "host": ["{{baseUrl}}"],
+          "path": ["properties", "{{propertyId}}", "reviews"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "propertyId", "value": "69d378a1b4de5ea96b1d93fa" }
+  ]
+}
