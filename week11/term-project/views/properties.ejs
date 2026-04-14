@@ -25,6 +25,11 @@
           <h3><%= prop.name %></h3>
           <p>Island: <%= prop.island %></p>
           <p>Type: <%= prop.type %></p>
+          <% if (prop.address) { %><p>Address: <%= prop.address %></p><% } %>
+          <% if (prop.nightlyRate !== undefined) { %><p>Nightly Rate: $<%= prop.nightlyRate %></p><% } %>
+          <% if (prop.starRating !== undefined) { %><p>Star Rating: <%= prop.starRating %>/5</p><% } %>
+          <% if (prop.capacity !== undefined) { %><p>Capacity: <%= prop.capacity %> guests</p><% } %>
+          <% if (prop.contactPhone) { %><p>Contact: <%= prop.contactPhone %></p><% } %>
           <p><%= prop.description || 'No description available.' %></p>
           <p>Reviews: <%= (prop.reviews && prop.reviews.length) || 0 %></p>
         </li>

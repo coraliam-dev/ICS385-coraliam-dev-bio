@@ -10,7 +10,7 @@ This project builds a full-stack web application for managing Hawaiian hospitali
 **Property Type:** Luxury Resort Hotel
 
 ### Week 10 Summary (Foundation)
-- Designed Mongoose Property schema with 8+ fields (name, island, type, description, amenities, targetSegment, imageURL, createdAt)
+- Designed Mongoose Property schema with core overview fields (name, island, type, description, address, nightlyRate, starRating, capacity, contactPhone, amenities, targetSegment, imageURL)
 - Created seed.js to populate MongoDB with initial property data
 - Verified MongoDB Atlas cloud connection
 - Made initial GitHub commit with schema and seed files
@@ -25,6 +25,16 @@ Added a `reviewSchema` embedded inside each Property document:
 - `date` (Date, auto-set to now) — timestamp of review
 
 **Rationale:** Reviews are tightly coupled to a single property and always accessed together, making embedding the natural choice over a separate collection.
+
+#### 1b. **Expanded Property Fields**
+To match the project overview and give Week 12 room for richer presentation, I added several hotel/property fields to the main schema:
+- `address` — location details shown in the property overview
+- `nightlyRate` — pricing for comparison and filtering
+- `starRating` — quick quality indicator for guests
+- `capacity` — useful for family or group planning
+- `contactPhone` — simple contact detail for the listing
+
+These fields also appear in the seed data and the EJS listing page, so the database, UI, and README all stay aligned.
 
 #### 2. **Express REST Routes**
 
@@ -48,7 +58,7 @@ Returns all Maui properties with at least one review rated 4 or higher.
 #### 3. **EJS Template UI**
 Created `/views/properties.ejs` — a basic HTML template that:
 - Loops through all properties via `<% properties.forEach() %>`
-- Displays property name, island, type, description
+- Displays property name, island, type, address, nightly rate, star rating, capacity, contact, and description
 - Shows review count and average rating
 - No styling yet (plain HTML; will enhance with CSS in Week 12)
 

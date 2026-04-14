@@ -19,6 +19,11 @@ const propertySchema = new mongoose.Schema({
     required: true
   },
   description: String,
+  address: { type: String, trim: true },
+  nightlyRate: { type: Number, min: 0 },
+  starRating: { type: Number, min: 1, max: 5 },
+  capacity: { type: Number, min: 1 },
+  contactPhone: { type: String, trim: true },
   amenities: [String],
   targetSegment: String,
   imageURL: String,
