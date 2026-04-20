@@ -8,7 +8,7 @@ import WeatherWidget from './components/WeatherWidget'
 const ISLANDS = ['Maui', "O'ahu", "Kaua'i"]
 
 const CITY_BY_ISLAND = {
-  Maui: 'Kahului',
+  Maui: 'Wailea',
   "O'ahu": 'Honolulu',
   "Kaua'i": 'Lihue',
   "Hawai'i": 'Hilo',

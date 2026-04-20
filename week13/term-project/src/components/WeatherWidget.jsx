@@ -23,19 +23,20 @@ const WeatherWidget = ({ city }) => {
           `https://api.openweathermap.org/data/2.5/weather?q=${city},US&units=imperial&appid=${apiKey}`,
         )
 
+        const data = await response.json()
+
         if (!response.ok) {
-          throw new Error('Unable to load weather data')
+          throw new Error(data?.message || 'Unable to load weather data')
         }
 
-        const data = await response.json()
         setWeather({
           temp: data.main.temp,
           condition: data.weather[0].main,
           humidity: data.main.humidity,
           wind: data.wind.speed,
         })
-      } catch {
-        setError('Weather unavailable right now.')
+      } catch (err) {
+        setError(`Weather unavailable: ${err.message}`)
       } finally {
         setLoading(false)
       }

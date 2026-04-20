@@ -4,11 +4,11 @@ import Dashboard from './Dashboard'
 const fallbackProperty = {
   name: 'Kai Nani',
   island: 'Maui',
-  tagline: 'A serene luxury spa escape on the Valley Isle.',
+  tagline: 'WAILEA\'S PREMIER DESTINATION FOR REFINED LUXURY',
   imageURL:
     'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80',
   description:
-    'Kai Nani blends oceanfront relaxation with restorative spa rituals for couples and honeymoon visitors who want comfort, privacy, and wellness-focused hospitality in Maui.',
+    'In the heart of Wailea, luxury is measured in moments of stillness. Indulge in our world-class spa program, where we blend holistic wellness with the rhythmic spirit of the Pacific. Whether it\'s a sunrise yoga session on the sand or a signature treatment in our open-air suites, every detail is a tribute to your well-being.',
   amenities: [
     'Couples spa suites',
     'Beach sound bath sessions',
