@@ -27,7 +27,13 @@ const mongooseOpts = {
   useUnifiedTopology: true,
   // Give up faster when the server selection fails so we surface errors quickly
   serverSelectionTimeoutMS: 5000,
-  // socketTimeoutMS: 45000 // optional: tune socket timeout if needed
+  // Connection/socket tuning
+  connectTimeoutMS: 10000,
+  socketTimeoutMS: 45000,
+  maxPoolSize: Number(process.env.MONGO_MAX_POOL || 10),
+  minPoolSize: Number(process.env.MONGO_MIN_POOL || 0),
+  // heartbeat frequency for monitoring (ms)
+  heartbeatFrequencyMS: Number(process.env.MONGO_HEARTBEAT_MS || 10000)
 };
 
 mongoose.connection.on('error', err => console.error('MongoDB connection error:', err));
@@ -92,6 +98,17 @@ function startServerAfterConnect() {
   // Mount routes
   app.use('/admin', require('./routes/auth'));
   app.use('/admin', require('./routes/admin'));
+
+  // Health check endpoint for orchestration / load balancers
+  app.get('/healthz', async (req, res) => {
+    const ok = mongoose.connection && mongoose.connection.readyState === 1;
+    const info = {
+      uptime: process.uptime(),
+      mongooseReadyState: mongoose.connection.readyState,
+      connected: ok
+    };
+    res.status(ok ? 200 : 503).json(info);
+  });
 
   // Simple index route
   app.get('/', (req, res) => res.send('Week14 Term Project - auth demo'));
