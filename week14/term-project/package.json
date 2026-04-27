@@ -4,12 +4,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "seed-admin": "node seed-admin.js"
+    "seed-admin": "node seed-admin.js",
+    "dev:reset": "sh scripts/reset-dev.sh",
+    "seed-properties": "node seed-properties.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-mongo": "^4.6.0",
     "csurf": "^1.11.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "ejs": "^5.0.2",
     "express": "^4.18.2",
