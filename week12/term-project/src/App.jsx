@@ -6,14 +6,14 @@ import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 
 const property = {
-  name: 'Wailea Beach Retreat',
+  name: 'Kai Nani',
   island: 'Maui',
   tagline: 'A serene romantic escape on the Valley Isle.',
   imageURL: '/images/wailea-hero.svg',
   imageAlt:
-    'Sunset ocean view at Wailea Beach Retreat with palm trees and a calm shoreline in Maui',
+    'Sunset ocean view at Kai Nani with palm trees and a calm shoreline in Maui',
   about:
-    'Wailea Beach Retreat is a boutique Hawaiian property designed for couples and honeymoon travelers seeking comfort, privacy, and oceanfront beauty. Guests enjoy easy beach access, peaceful evenings, and personalized hospitality with local island charm. The experience is curated for visitors who value wellness, romance, and memorable sunset moments.',
+    'Kai Nani is a boutique Hawaiian property designed for couples and honeymoon travelers seeking comfort, privacy, and oceanfront beauty. Guests enjoy easy beach access, peaceful evenings, and personalized hospitality with local island charm. The experience is curated for visitors who value wellness, romance, and memorable sunset moments.',
   visitorSegment: 'Couples and honeymoon travelers',
   amenities: [
     'Ocean View Lanai Suites',

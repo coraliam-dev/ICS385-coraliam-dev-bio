@@ -19,7 +19,7 @@
       <div class="brand">
         <div class="logo"></div>
         <div>
-          <h2>Your Property Name</h2>
+          <h2>Kai Nani</h2>
           <div>Admin login</div>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <% } %>
 
       <form method="POST" action="/admin/login">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="hidden" name="_csrf" value="<%= (csrfToken||'').replace(/\s+/g, '') %>">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" placeholder="admin@example.com" required>
 

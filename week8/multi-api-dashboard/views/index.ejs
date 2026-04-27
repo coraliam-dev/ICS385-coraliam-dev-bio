@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8 Multi-API Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= courseStats.university %> Multi-API Dashboard</h1>
+      <p><%= courseStats.semester %> • Updated <%= now %></p>
+    </header>
+
+    <main>
+      <form class="weather-form" method="GET" action="/">
+        <label for="city">Weather City</label>
+        <input id="city" name="city" value="<%= city %>" required />
+        <button type="submit">Refresh Dashboard</button>
+      </form>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Weather API</h2>
+          <% if (weather.ok) { %>
+            <p class="big"><%= weather.city %>: <%= weather.temp %>°F</p>
+            <p><%= weather.description %></p>
+            <p>Humidity: <%= weather.humidity %>%</p>
+            <p>Wind: <%= weather.windSpeed %> mph</p>
+            <img alt="weather icon" src="https://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" />
+          <% } else { %>
+            <p class="error"><%= weather.message %></p>
+          <% } %>
+        </article>
+
+        <article class="card">
+          <h2>Programming Humor</h2>
+          <% if (joke.ok) { %>
+            <blockquote>“<%= joke.joke %>”</blockquote>
+          <% } else { %>
+            <p class="error"><%= joke.joke %></p>
+          <% } %>
+        </article>
+
+        <article class="card">
+          <h2>Daily Inspiration</h2>
+          <% if (chuck.ok) { %>
+            <blockquote>“<%= chuck.value %>”</blockquote>
+          <% } else { %>
+            <p class="error"><%= chuck.value %></p>
+          <% } %>
+        </article>
+
+        <article class="card">
+          <h2>JSON Catalog Stats</h2>
+          <p class="big"><%= courseStats.totalCourses %> courses</p>
+          <p><%= courseStats.totalDepartments %> departments</p>
+          <p>Average enrollment: <%= courseStats.avgEnrollment %>%</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

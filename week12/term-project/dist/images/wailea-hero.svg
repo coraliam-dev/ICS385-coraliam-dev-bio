@@ -1,12 +1,12 @@
 <svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Wailea Beach Retreat hero scene</title>
+  <title id="title">Kai Nani hero scene</title>
   <desc id="desc">Stylized Hawaiian sunset over ocean with palm silhouettes for marketing hero image</desc>
-  <rect width="1200" height="700" fill="#0B2545"/>
-  <rect y="350" width="1200" height="350" fill="#1F7A8C"/>
-  <circle cx="920" cy="250" r="90" fill="#FFD166"/>
-  <path d="M0 390C140 360 260 360 400 390C540 420 660 420 800 390C940 360 1060 360 1200 390V700H0V390Z" fill="#2A9D8F"/>
-  <path d="M170 540L210 390L250 540H225L210 470L195 540H170Z" fill="#0B2545"/>
-  <path d="M980 560L1015 430L1050 560H1028L1015 500L1002 560H980Z" fill="#0B2545"/>
-  <text x="60" y="110" fill="white" font-family="Arial, sans-serif" font-size="52" font-weight="700">Wailea Beach Retreat</text>
-  <text x="60" y="160" fill="#E9F1F7" font-family="Arial, sans-serif" font-size="28">Maui • Romantic Oceanfront Escape</text>
+  <rect width="1200" height="700" fill="#6A5A4D"/>
+  <rect y="350" width="1200" height="350" fill="#A3917F"/>
+  <circle cx="920" cy="250" r="90" fill="#E7DBCB"/>
+  <path d="M0 390C140 360 260 360 400 390C540 420 660 420 800 390C940 360 1060 360 1200 390V700H0V390Z" fill="#857363"/>
+  <path d="M170 540L210 390L250 540H225L210 470L195 540H170Z" fill="#4F4338"/>
+  <path d="M980 560L1015 430L1050 560H1028L1015 500L1002 560H980Z" fill="#4F4338"/>
+  <text x="60" y="110" fill="white" font-family="Arial, sans-serif" font-size="52" font-weight="700">Kai Nani</text>
+  <text x="60" y="160" fill="#FCF8F4" font-family="Arial, sans-serif" font-size="28">Maui • Romantic Oceanfront Escape</text>
 </svg>
