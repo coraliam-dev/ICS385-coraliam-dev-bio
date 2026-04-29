@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#c99a3b"/>
+      <stop offset="1" stop-color="#b37f25"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="#0b6b52" />
+  <g transform="translate(40,48)">
+    <text x="0" y="80" font-family="Playfair Display, Georgia, serif" font-size="88" fill="url(#g)">KN</text>
+  </g>
+</svg>

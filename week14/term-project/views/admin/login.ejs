@@ -17,7 +17,8 @@
         padding:32px;border-radius:14px;box-shadow:0 10px 30px rgba(10,30,20,0.12);border:1px solid rgba(11,107,82,0.06)
       }
       .brand{display:flex;align-items:center;gap:16px;margin-bottom:6px}
-      .logo{width:64px;height:64px;background:var(--emerald); border-radius:12px; box-shadow:inset 0 -6px 10px rgba(0,0,0,0.12); border:3px solid rgba(201,154,59,0.14)}
+      .logo{width:64px;height:64px;border-radius:12px; box-shadow:inset 0 -6px 10px rgba(0,0,0,0.12); border:3px solid rgba(201,154,59,0.14);overflow:hidden}
+      .logo img{width:100%;height:100%;display:block}
       h2{font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;margin:0;color:#072a22;font-size:28px}
       body{font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
       .subtitle{color:#3b5b51;font-size:14px}
@@ -33,10 +34,10 @@
   <body>
     <div class="container">
       <div class="brand">
-        <div class="logo"></div>
+        <div class="logo"><img src="/brand-logo.svg" alt="Kai Nani logo"></div>
         <div>
           <h2>Kai Nani</h2>
-          <div>Admin login</div>
+          <div class="subtitle">Admin login</div>
         </div>
       </div>
 
