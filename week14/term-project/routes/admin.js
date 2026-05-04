@@ -2,6 +2,7 @@ const express = require('express');
 const isAuthenticated = require('../middleware/isAuthenticated');
 const mongoose = require('mongoose');
 const Property = require('../../../models/Property');
+const fetch = global.fetch || require('node-fetch');
 const router = express.Router();
 
 router.get('/dashboard', isAuthenticated, async (req, res) => {
@@ -21,9 +22,37 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
       properties = [];
     }
 
+    // Fetch weather forecast for Wailea, Maui if API key is provided
+    let weather = null;
+    try {
+      const key = process.env.OPENWEATHER_API_KEY;
+      if (key) {
+        // Wailea, Maui coordinates
+        const lat = 20.7139;
+        const lon = -156.4380;
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const data = await resp.json();
+          // compute simple next-24h rain probability and current temp
+          const now = Date.now();
+          const next24 = data.list.filter(item => (new Date(item.dt * 1000) - now) < 24 * 3600 * 1000);
+          const rainForecast = next24.map(i => ({ dt: i.dt, dt_txt: i.dt_txt, rain: i.rain && i.rain['3h'] ? i.rain['3h'] : 0, pop: i.pop, temp: i.main && i.main.temp }));
+          weather = {
+            city: data.city && data.city.name,
+            list: rainForecast,
+            summary: rainForecast.length ? `${Math.round(rainForecast.reduce((s, r) => s + (r.pop || 0), 0) / rainForecast.length * 100)}% chance of precipitation in next 24h` : 'No forecast'
+          };
+        }
+      }
+    } catch (e) {
+      weather = null;
+    }
+
     res.render('admin/dashboard', {
       user: req.user,
       properties,
+      weather,
       error: null
     });
   } catch (err) {

@@ -1,6 +1,6 @@
 function AmenitiesSection({ amenities }) {
   return (
-    <section className="section" aria-labelledby="amenities-heading" id="dashboard">
+    <section className="section" aria-labelledby="amenities-heading" id="stay">
       <div className="container">
         <div className="amenities-card">
           <h2 id="amenities-heading">Amenities</h2>

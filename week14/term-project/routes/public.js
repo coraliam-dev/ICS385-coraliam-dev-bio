@@ -32,4 +32,10 @@ router.get('/', (req, res) => {
     </html>`);
 });
 
+  // Convenience route: forward /dashboard to the protected admin dashboard
+  router.get('/dashboard', (req, res) => {
+    if (req.isAuthenticated && req.isAuthenticated()) return res.redirect('/admin/dashboard');
+    return res.redirect('/login');
+  });
+
 module.exports = router;

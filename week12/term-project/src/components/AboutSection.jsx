@@ -1,6 +1,6 @@
 function AboutSection({ description, visitorSegment }) {
   return (
-    <section className="section" aria-labelledby="about-heading">
+    <section className="section" aria-labelledby="about-heading" id="about-property">
       <div className="container">
         <div className="about-card">
           <h2 id="about-heading">About the Property</h2>

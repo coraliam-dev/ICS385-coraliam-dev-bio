@@ -38,6 +38,55 @@
 
     <section>
       <h2>Properties</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="weather">Weather</button>
+        <button class="tab" data-tab="spa">Featured: Spa</button>
+        <button class="tab" data-tab="sound">Sound Bath</button>
+        <button class="tab" data-tab="getaway">Getaway</button>
+      </div>
+
+      <div id="tab-weather" class="tab-panel">
+        <h3>Wailea, Maui Weather</h3>
+        <% if (weather) { %>
+          <p><strong><%= weather.city %></strong> — <%= weather.summary %></p>
+          <table>
+            <thead><tr><th>Time</th><th>Temp (°C)</th><th>Rain (mm)</th><th>Pop</th></tr></thead>
+            <tbody>
+              <% weather.list.forEach(function(w){ %>
+                <tr>
+                  <td><%= w.dt_txt %></td>
+                  <td><%= w.temp != null ? w.temp : '—' %></td>
+                  <td><%= w.rain %></td>
+                  <td><%= Math.round((w.pop||0)*100) %>%</td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p>No weather data — set `OPENWEATHER_API_KEY` in your environment to enable live forecast.</p>
+        <% } %>
+      </div>
+
+      <div id="tab-spa" class="tab-panel" style="display:none">
+        <h3>Featured Spa & Retreat</h3>
+        <p>Experience our signature spa treatments including a spiritual sound bath and restorative getaways. Feature highlights:</p>
+        <ul>
+          <li>Sound bath sessions with native instruments</li>
+          <li>Hydrotherapy and hot/cold circuits</li>
+          <li>Couples' relaxation packages and meditation</li>
+        </ul>
+      </div>
+
+      <div id="tab-sound" class="tab-panel" style="display:none">
+        <h3>Spiritual Sound Bath</h3>
+        <p>Guided sound bath sessions to restore balance and promote deep relaxation. Schedule and availability shown in admin features.</p>
+      </div>
+
+      <div id="tab-getaway" class="tab-panel" style="display:none">
+        <h3>Getaway Packages</h3>
+        <p>Curated getaway packages combining lodging, spa, and activities for a restful Maui experience.</p>
+      </div>
+
       <table>
         <thead>
           <tr><th>Name</th><th>Details</th></tr>
@@ -52,5 +101,20 @@
         </tbody>
       </table>
     </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            const name = btn.getAttribute('data-tab');
+            document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+            const panel = document.getElementById('tab-' + name);
+            if (panel) panel.style.display = '';
+          });
+        });
+      });
+    </script>
   </body>
 </html>
