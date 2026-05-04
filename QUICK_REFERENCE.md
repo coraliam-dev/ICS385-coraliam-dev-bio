@@ -55,15 +55,29 @@ Denormalize dashboard query: 3 round-trips → 1 aggregation pipeline = 60% late
 
 ---
 
-## 📱 DEMO PATH (Bookmark These URLs)
+## 📱 DEMO PATH (Two Apps, Two Terminals)
 
-1. **Marketing page:** `https://yourapp.onrender.com/`
-   - Show: Hero, menu, Sound Bath section, responsive mobile view
+**Terminal 1 (start first):**
+```bash
+cd week12/term-project && npm run preview
+# Runs on http://localhost:4173/
+```
+
+**Terminal 2 (start second):**
+```bash
+cd week14/term-project && npm start
+# Runs on http://localhost:3000/
+```
+
+### **Browser Tabs to Bookmark:**
+
+1. **Marketing page:** `http://localhost:4173/` (or Render URL)
+   - Show: Hero, menu, Sound Bath section, real-time weather
    
-2. **Login page:** `https://yourapp.onrender.com/login`
+2. **Login page:** `http://localhost:3000/login` (or Render URL)
    - Show: Local email form, Google OAuth button
    
-3. **Dashboard:** `https://yourapp.onrender.com/admin/dashboard`
+3. **Dashboard:** `http://localhost:3000/admin/dashboard` (or Render URL)
    - Show: Chart.js reviews, property metrics, weather integration
 
 ---

@@ -69,10 +69,13 @@ Your complete **Kai Nani Hospitality Dashboard** — a full-stack system built o
 - Speak to the why: "Boutique hotels need real-time wellness recommendations"
 
 ### **Segment 2a: Live Demo (1 min)**
+- **Setup:** Two terminals running simultaneously:
+  - Terminal 1: `cd week12/term-project && npm run preview` (marketing site on 4173)
+  - Terminal 2: `cd week14/term-project && npm start` (backend on 3000)
 - Demo path:
-  1. Marketing page (`https://yourapp.onrender.com/`) — show luxury design + weather feature
-  2. Login page — show local email + Google OAuth button
-  3. Dashboard — show Chart.js analytics + weather data
+  1. Marketing page (`http://localhost:4173/` or Render URL) — show luxury design + weather feature
+  2. Login page (`http://localhost:3000/login` or Render URL) — show local email + Google OAuth button
+  3. Dashboard (`http://localhost:3000/admin/dashboard` or Render URL) — show Chart.js analytics + weather data
   4. Logout — clear session
 
 ### **Segment 2b: Code Walk-through (1 min)**

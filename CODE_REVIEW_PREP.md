@@ -22,25 +22,45 @@
 
 ---
 
-## 🎬 DEMO PATH (Pre-stage These URLs)
+## 🎬 DEMO PATH (Two Apps Running Simultaneously)
 
-1. **Marketing Page (Wk 12 React UI)**
-   - URL: `https://yourapp.onrender.com/` (public page)
-   - Show: Hero section, luxury hamburger menu, Sound Bath & Weather Wellness section, responsive design on mobile
+**IMPORTANT:** Your demo requires TWO separate applications on different ports:
 
-2. **Dashboard (Wk 13)**
-   - URL: `https://yourapp.onrender.com/admin/dashboard` (if public) OR behind login
-   - Show: Chart.js visualization of guest reviews, weather data integration, property overview
+### **App 1: Marketing Site (Wk 12 React UI)**
+- Terminal Command: `cd week12/term-project && npm run preview`
+- URL: `http://localhost:4173/` (local) or your deployed Render URL
+- Show: Hero section, luxury hamburger menu, Sound Bath & Weather Wellness section, responsive mobile design
+- Duration: ~20 seconds
 
-3. **Login Flow (Wks 14–15)**
-   - URL: `https://yourapp.onrender.com/login`
-   - Show: Local email/password form, Google Sign-In button
-   - **Demo One Path:** Sign in with local email → redirects to dashboard
-   - **Demo Other Path (if time):** Logout → cleanup session
+### **App 2: Backend + Auth + Dashboard (Wks 14–15)**
+- Terminal Command: `cd week14/term-project && npm start`
+- URL: `http://localhost:3000/` (local) or your deployed Render URL
 
-4. **Protected Admin Action (Wks 11–13)**
-   - Example: POST new review via Postman OR show read-only property endpoint
-   - Show: JWT/session auth required, MongoDB interaction, response structure
+#### **Demo Sequence (within this app):**
+
+1. **Login Page (Wks 14–15)**
+   - URL: `http://localhost:3000/login`
+   - Show: Local email/password form + Google Sign-In button
+   - Duration: ~15 seconds
+
+2. **Sign-In Action**
+   - Enter test credentials (or use Google OAuth if you prefer)
+   - Show session being created via Passport
+   - Redirect to dashboard
+   - Duration: ~15 seconds
+
+3. **Admin Dashboard (Wks 13–14)**
+   - URL: `http://localhost:3000/admin/dashboard` (redirected after login)
+   - Show: Chart.js guest review visualization, property metrics, weather integration
+   - Duration: ~15 seconds
+
+4. **Logout Action**
+   - Click logout button
+   - Show session cleared from MongoDB
+   - Redirect back to login page
+   - Duration: ~10 seconds
+
+**Total Demo Time:** ~60 seconds
 
 ---
 

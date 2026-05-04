@@ -41,8 +41,12 @@
 ## 🎬 SEGMENT 2a: LIVE DEMO (1:00–2:00)
 
 ### **Pre-Demo Checklist**
-- [ ] Render deployment URL bookmarked and loaded
-- [ ] Logged out (or open private browser tab)
+- [ ] Terminal 1 running: `cd week12/term-project && npm run preview` (port 4173)
+- [ ] Terminal 2 running: `cd week14/term-project && npm start` (port 3000)
+- [ ] Browser has three tabs ready:
+  - Tab 1: `http://localhost:4173/` (marketing page)
+  - Tab 2: `http://localhost:3000/login` (login page)
+  - Tab 3: Ready to show dashboard after login
 - [ ] Network tab in DevTools closed (don't show technical noise)
 - [ ] Phone ready to show mobile view if asked
 - [ ] Do NOT share password / API keys during demo
@@ -50,11 +54,11 @@
 ### **Demo Path: Visitor Journey**
 
 #### **Part 1: Public Marketing Site (0:20)**
-*URL: `https://yourapp.onrender.com/`*
+*URL: `http://localhost:4173/` (or your Render deployment)*
 
 > "Let me walk you through a visitor's journey. First, they land on the public home page."
 >
-> *[Scroll slowly through hero section]*
+> *[Open browser tab 1, navigate to marketing site, scroll slowly through hero section]*
 >
 > "We see a luxury header with a hamburger menu [click menu], which opens a full-screen overlay with navigation to Stays, Experiences, Dining, and Wellness. [Close menu.] Below, the hero section showcases the property with a call-to-action 'Book a Stay.'
 >
@@ -63,16 +67,16 @@
 > This is our signature feature — real-time Sound Bath & Weather Wellness recommendations. [Point to current weather card] It's fetching live weather for Wailea right now: 72°F, light rain, calm wind. Based on these conditions, the system recommends [point to recommendation badge] 'Perfect 🌧️ — Rain Sound Bath Moment.' This is why we built this: combining data science with hospitality."
 
 #### **Part 2: Login Flow (0:15)**
-*URL: `https://yourapp.onrender.com/login`*
+*URL: `http://localhost:3000/login` (or your Render deployment)*
 
-> "Now a returning guest wants to access their dashboard. [Go to login page.] They see two options: local email/password sign-in [point] or Google OAuth. Let me sign in with my local email."
+> "Now a returning guest wants to access their dashboard. [Switch to browser tab 2, navigate to login page.] They see two options: local email/password sign-in [point] or Google OAuth. Let me sign in with my local email."
 >
-> *[Enter test credentials, submit]*
+> *[Enter test credentials (e.g., test@example.com / password), submit]*
 >
-> "[Waiting…] Notice the session is being persisted to MongoDB via connect-mongo. Once authenticated, Passport serializes the user ID into a session cookie."
+> "[Waiting for redirect…] Notice the session is being persisted to MongoDB via connect-mongo. Once authenticated, Passport serializes the user ID into a session cookie. The browser stores the session ID, and we're logged in."
 
 #### **Part 3: Admin Dashboard (0:15)**
-*URL: `https://yourapp.onrender.com/admin/dashboard` (or redirected after login)*
+*URL: `http://localhost:3000/admin/dashboard` (or redirected after login)*
 
 > "And we're in the protected dashboard. [Show chart] Here we see guest reviews visualized with Chart.js — a real-time breakdown of star ratings and review sentiment. Below, property metrics: occupancy rate, nightly rate, capacity. All of this is populated from MongoDB queries joined with external weather data from Open-Meteo API."
 
