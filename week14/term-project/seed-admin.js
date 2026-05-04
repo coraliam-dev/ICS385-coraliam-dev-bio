@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 
 async function seed() {
-  if (!process.env.MONGODB_URI) {
-    console.error('MONGODB_URI not set in env');
+  const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI;
+  if (!mongoUri) {
+    console.error('MONGO_URI not set in env');
     process.exit(1);
   }
-  await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect(mongoUri);
   const email = process.env.ADMIN_EMAIL || 'admin@example.com';
   const password = process.env.ADMIN_PASSWORD || 'changeme';
 
@@ -17,7 +18,7 @@ async function seed() {
     process.exit(0);
   }
 
-  const user = new User({ email, password, role: 'admin' });
+  const user = new User({ email, password, role: 'admin', provider: 'local' });
   await user.save();
   console.log('Created admin user:', email);
   await mongoose.disconnect();

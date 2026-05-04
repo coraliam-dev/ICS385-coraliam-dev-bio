@@ -16,6 +16,7 @@
       tbody td{padding:14px 10px;border-top:1px solid rgba(11,107,82,0.06);vertical-align:top}
       .name-col{width:220px;font-weight:600;color:#07332b}
       pre{white-space:pre-wrap;font-family:Menlo,Monaco,monospace;background:transparent;border:none;margin:0;color:#243a36}
+      .error{margin:12px 0 0;color:#8b1d1d;background:rgba(139,29,29,0.04);padding:10px;border-radius:8px}
       @media (max-width:720px){body{padding:16px}.name-col{width:140px}}
     </style>
   </head>
@@ -30,6 +31,10 @@
       </div>
       <div><a class="logout" href="/admin/logout">Logout</a></div>
     </header>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
 
     <section>
       <h2>Properties</h2>
