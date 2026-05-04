@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f9ff, #eaf3ff);
+  color: #123;
+}
+
+header {
+  background: #0b57d0;
+  color: #fff;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+main {
+  max-width: 1100px;
+  margin: 1.25rem auto;
+  padding: 0 1rem;
+}
+
+.weather-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weather-form input,
+.weather-form button {
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #b8c8e7;
+}
+
+.weather-form button {
+  cursor: pointer;
+  background: #0b57d0;
+  color: #fff;
+  border: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 18px rgba(13, 63, 145, 0.1);
+}
+
+.big {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 600;
+}
+
+.muted {
+  color: #455;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 0.8rem;
+  border-left: 4px solid #8ab4f8;
+}

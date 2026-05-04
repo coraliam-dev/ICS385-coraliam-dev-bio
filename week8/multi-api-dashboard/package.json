@@ -1,0 +1,24 @@
+{
+  "name": "multi-api-dashboard",
+  "version": "1.0.0",
+  "description": "Week 8 Intermediate assignment: Multi-API Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ics385",
+    "express",
+    "api",
+    "dashboard"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
