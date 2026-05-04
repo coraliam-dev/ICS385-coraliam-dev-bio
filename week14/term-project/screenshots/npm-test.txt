@@ -1,0 +1,13 @@
+PASS tests/auth.test.js
+  auth flows
+    ✓ renders the login page with Google sign-in (18 ms)
+    ✓ rejects missing login fields with validation errors (10 ms)
+    ✓ accepts valid local credentials and redirects to the dashboard (4 ms)
+    ✓ redirects unauthenticated users away from the dashboard (1 ms)
+    ✓ starts the Google OAuth flow (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.917 s, estimated 1 s
+Ran all test suites.
