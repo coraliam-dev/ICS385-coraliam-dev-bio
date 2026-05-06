@@ -44,9 +44,21 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
             summary: rainForecast.length ? `${Math.round(rainForecast.reduce((s, r) => s + (r.pop || 0), 0) / rainForecast.length * 100)}% chance of precipitation in next 24h` : 'No forecast'
           };
         }
+      } else {
+        // Default weather object when API key is not set
+        weather = {
+          city: 'Wailea, Maui',
+          list: [],
+          summary: 'Weather API not configured. Add OPENWEATHER_API_KEY to .env'
+        };
       }
     } catch (e) {
-      weather = null;
+      // Fallback default weather
+      weather = {
+        city: 'Wailea, Maui',
+        list: [],
+        summary: 'Weather data unavailable'
+      };
     }
 
     res.render('admin/dashboard', {

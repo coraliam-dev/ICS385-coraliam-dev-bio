@@ -39,13 +39,13 @@
     <section>
       <h2>Properties</h2>
       <div class="tabs">
-        <button class="tab active" data-tab="weather">Weather</button>
-        <button class="tab" data-tab="spa">Featured: Spa</button>
+        <button class="tab" data-tab="weather">Weather</button>
+        <button class="tab active" data-tab="spa">Featured: Spa</button>
         <button class="tab" data-tab="sound">Sound Bath</button>
         <button class="tab" data-tab="getaway">Getaway</button>
       </div>
 
-      <div id="tab-weather" class="tab-panel">
+      <div id="tab-weather" class="tab-panel" style="display:none">
         <h3>Wailea, Maui Weather</h3>
         <% if (weather) { %>
           <p><strong><%= weather.city %></strong> — <%= weather.summary %></p>
@@ -67,7 +67,7 @@
         <% } %>
       </div>
 
-      <div id="tab-spa" class="tab-panel" style="display:none">
+      <div id="tab-spa" class="tab-panel">
         <h3>Featured Spa & Retreat</h3>
         <p>Experience our signature spa treatments including a spiritual sound bath and restorative getaways. Feature highlights:</p>
         <ul>

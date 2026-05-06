@@ -11,7 +11,7 @@
 | **10** | Property Schema | `week10/models/Property.js` | amenities, nightlyRate, starRating |
 | **11** | Review Subdocs + REST API | `week11/models/Property.js` | `reviewSchema`, `$elemMatch`, `$gte/$lte` |
 | **12** | React Marketing Site | `week12/src/components/WellnessWeatherSection.jsx` | Live Open-Meteo API, recommendation logic |
-| **13** | Dashboard + Charts | `week13/src/components/Dashboard.jsx` | Chart.js, guest review analytics |
+| **13** | Dashboard + Charts | `week13/src/components/Dashboard.jsx` | Chart.js, island metrics, local dashboard data |
 | **14** | Local Auth | `week14/config/passport.js` | Lines 1–25, bcrypt, LocalStrategy |
 | **15** | OAuth + Find-or-Link-or-Create | `week14/config/passport.js` | **Lines 27–64** ← MAIN CODE WALK-THROUGH |
 | **16** | Code Review | This card | You are here. |

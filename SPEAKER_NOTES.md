@@ -78,12 +78,12 @@
 #### **Part 3: Admin Dashboard (0:15)**
 *URL: `http://localhost:3000/admin/dashboard` (or redirected after login)*
 
-> "And we're in the protected dashboard. [Show chart] Here we see guest reviews visualized with Chart.js — a real-time breakdown of star ratings and review sentiment. Below, property metrics: occupancy rate, nightly rate, capacity. All of this is populated from MongoDB queries joined with external weather data from Open-Meteo API."
+> "And we're in the protected dashboard. Here the admin route is protected by Passport, then it queries MongoDB for property records and renders them into the EJS dashboard. The dashboard also attempts to fetch Wailea weather from OpenWeatherMap when `OPENWEATHER_API_KEY` is configured, and falls back gracefully when it is not."
 
 #### **Part 4: Logout (0:10)**
 *Click logout button*
 
-> "When we log out, the session is deleted from MongoDB, the cookie is cleared, and we're returned to the login page. The user is now unauthenticated."
+> "When we log out, Passport removes the authenticated user from the session and we're returned to the login page. The user is now unauthenticated."
 
 **Duration:** ~60 seconds total
 
@@ -160,23 +160,15 @@
 
 #### **Q3: "How does data flow from your Express API to the React dashboard?"**
 
-> "Good question. Here's the full stack:
+> "Good question. There are two data-flow examples in this repo, and I would distinguish them clearly:
 >
-> 1. **React Component Mount:** In Week 13, we built `DashboardPage.jsx`. On component mount, `useEffect` runs.
+> 1. **Week 12 marketing page:** `App.jsx` mounts, `useEffect` calls `fetch('/properties')`, Express handles that route in `week11/term-project/routes/properties.js`, MongoDB returns Property documents, then React stores the first property in state and re-renders the hero/about/amenities content.
 >
-> 2. **Fetch from API:** `useEffect` calls `fetch('/api/admin/stats')`, which makes an HTTP GET request to our Express server.
+> 2. **Week 13 dashboard:** the charts currently use local `dashboardData.js` arrays as fallback/static data. Components like `ArrivalChart` still use `useEffect`, but the file has a TODO showing the intended API replacement: `GET /api/arrivals?island=${island}`.
 >
-> 3. **Express Route Handler:** In `week14/term-project/routes/admin.js`, the route handler queries MongoDB for properties, guest reviews, and average ratings.
+> 3. **Week 14 protected dashboard:** `/dashboard` redirects to `/admin/dashboard` after authentication. `routes/admin.js` checks `isAuthenticated`, queries MongoDB with `Property.find({}).lean()`, optionally fetches weather, and renders `views/admin/dashboard.ejs`.
 >
-> 4. **Database Query:** `Property.find()` returns documents from MongoDB, with reviews embedded.
->
-> 5. **Response:** The handler sends JSON back to React.
->
-> 6. **React State Update:** `fetch().then(res => res.json()).then(data => setDashboardData(data))`. React updates state.
->
-> 7. **Re-render:** The component re-renders with the new data. Chart.js reads the state and re-renders the visualization.
->
-> The flow is: **Browser → Fetch → Express → MongoDB → JSON Response → React State → Chart.js UI**."
+> So the clean answer is: **React fetches JSON from Express in Week 12, Chart.js renders state-driven static/dashboard data in Week 13, and the final Week 14 admin dashboard uses server-side EJS rendering after Passport authentication.**"
 
 ---
 
@@ -215,19 +207,15 @@
 >
 > 4. **Next Request:** Browser sends the cookie. Express middleware extracts it, looks up the session in MongoDB, and passes the session to `deserializeUser(id, done)`, which fetches the full User from MongoDB and attaches it to `req.user`.
 >
-> 5. **Logout:** We call `req.logout()` and `req.session.destroy()`, which deletes the session from MongoDB and clears the cookie."
+> 5. **Logout:** The current route calls `req.logout()` and redirects to `/login`. Passport removes `req.user` from the login session. A stronger production version would also call `req.session.destroy()` and clear the cookie explicitly, but this version keeps the route simple."
 
 ---
 
 #### **Q7: "What would you improve with more time?"**
 
-> "The dashboard query. Right now, fetching a guest's profile + their properties + all reviews involves three MongoDB round-trips:
+> "The dashboard data model. Right now, the final Week 14 dashboard reads property records with `Property.find({}).lean()` and renders the EJS page. Week 11 had embedded reviews inside each property, while the root `models/Property.js` used by Week 14 is simpler and does not include the review subdocument fields.
 >
-> 1. `User.findById(userId)`
-> 2. `Property.find({ userId })`
-> 3. `Review.aggregate([{ $match: { propertyId: ... } }])`
->
-> With more time, I'd use MongoDB's `$lookup` aggregation operator to join all three collections in a single query. Or I'd denormalize — store a summary of reviews (count, avg rating) directly in the Property document. This would cut latency by 60%."
+> With more time, I'd consolidate the models so the final app uses the richer Week 11 property schema everywhere. Then I would denormalize review summaries — average rating and review count — directly onto the Property document so the dashboard can render fast without recalculating every review on every request."
 
 ---
 

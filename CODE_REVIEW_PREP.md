@@ -15,7 +15,7 @@
 | **10** | MongoDB Mongoose Property Schema | `week10/term-project/models/Property.js` | Designed core property data model with amenities, ratings, nightly rates, and capacity fields. Initialized MongoDB connection. |
 | **11** | Review Subdocuments + Express REST API | `week11/term-project/models/Property.js`, `routes/properties.js` | Embedded `reviewSchema` (guestName, rating, comment, date) within Property documents. Built GET/POST routes with `$gte`, `$lte`, `$elemMatch` query operators. |
 | **12** | React UI — Public Marketing Page | `week12/term-project/src/` | Luxury responsive React+Tailwind marketing site with Hero, About, Experiences, Dining, Gallery, and Wellness sections. Mobile-first design. Integrated live weather API (Open-Meteo). |
-| **13** | Dashboard with Chart.js + OpenWeatherMap | `week13/term-project/src/` | Protected admin dashboard with guest review charts, property analytics, and real-time weather visualization. |
+| **13** | Dashboard with Chart.js + OpenWeatherMap | `week13/term-project/src/` | React dashboard with Chart.js, island filters, local dashboard data, and real-time weather visualization. |
 | **14** | Local Authentication (Passport + bcrypt) | `week14/term-project/config/passport.js`, `models/User.js` | Passport local strategy with bcrypt password hashing, email validation, session persistence via connect-mongo. |
 | **15** | Google OAuth 2.0 + Find-or-Link-or-Create | `week14/term-project/config/passport.js` (lines 27–64) | Google OAuth flow with email verification; links Google identity to existing local account OR creates new user. Federated session serialization. |
 | **16** | Code Review + Reflection | This document | Present full arc, defend design choices, articulate one complex component. |
@@ -51,12 +51,12 @@
 
 3. **Admin Dashboard (Wks 13–14)**
    - URL: `http://localhost:3000/admin/dashboard` (redirected after login)
-   - Show: Chart.js guest review visualization, property metrics, weather integration
+   - Show: Protected EJS dashboard, MongoDB property records, weather integration
    - Duration: ~15 seconds
 
 4. **Logout Action**
    - Click logout button
-   - Show session cleared from MongoDB
+   - Show authenticated user removed from the Passport session
    - Redirect back to login page
    - Duration: ~10 seconds
 
@@ -161,13 +161,13 @@ return done(null, createdUser);
 > *"This is the Kai Nani Hospitality Dashboard, a full-stack Maui property management system built over Weeks 10–16. [Show PRD PDF: cover, problem statement, acceptance criteria table] The project evolved from a data model in Week 10, to a REST API in Week 11, to a React marketing site in Week 12, a chart-driven dashboard in Week 13, and local + OAuth authentication in Weeks 14 and 15. The core problem: boutique hotels need a fast, mobile-friendly way to showcase properties and let verified guests book spa experiences based on real-time weather."*
 
 ### **Segment 2a: Live Demo (1 min)**
-> *"Let me walk you through a visitor's journey. [Open browser, show marketing page] Here's the public site — luxury header with a hamburger menu, hero section with the property image, and below that, our Sound Bath & Weather Wellness feature. [Scroll down] It fetches live weather for Wailea and recommends spa moments: 'Perfect 🌧️' if it's raining and calm, 'Good 🌙' for evening meditation, or 'Not Ideal ☀️' for sunny days. [Click login] Now let's sign in. [Show Google OAuth button + local email form]. I'll log in with my local email… [submit form] and I'm redirected to the admin dashboard. [Show dashboard] Here we see guest review data visualized with Chart.js, property metrics, and weather integration. [Point] If I were an admin, I could post a new review or manage properties. Let me log out [click logout, session clears]."*
+> *"Let me walk you through a visitor's journey. [Open browser, show marketing page] Here's the public site — luxury header with a hamburger menu, hero section with the property image, and below that, our Sound Bath & Weather Wellness feature. [Scroll down] It fetches live weather for Wailea and recommends spa moments: 'Perfect 🌧️' if it's raining and calm, 'Good 🌙' for evening meditation, or 'Not Ideal ☀️' for sunny days. [Click login] Now let's sign in. [Show Google OAuth button + local email form]. I'll log in with my local email… [submit form] and I'm redirected to the admin dashboard. [Show dashboard] This route is protected by Passport, reads property records from MongoDB, and includes weather integration when the API key is configured. Let me log out [click logout], which removes the authenticated user from the session."*
 
 ### **Segment 2b: Code Walk-through (1 min)**
 > *"Let me show you the most complex piece — the Google OAuth verify callback. [Switch to VS Code, open passport.js, lines 27–64 visible] This is where we implement 'find-or-link-or-create.' When a user signs in with Google, we first check: do we already have a user with this googleId? If yes, we return them. If no, we check if their verified Google email matches an existing local account — if it does, we link the Google identity to that local account by storing the googleId and saving. If neither exists, we create a new user. This design lets a guest who registered locally via email later sign in with Google on a different device, and their account merges. The key challenge was email verification — we only link if Google confirms the email is verified, otherwise a malicious actor could spoof an account. [Point to line] Here's the `.save()` call that persists the link to MongoDB."*
 
 ### **Segment 3: Reflection (If Asked)**
-> *"With more time, I would denormalize the dashboard query. Right now, fetching a guest's full profile, their properties, and all reviews involves three MongoDB round-trips. I'd create a MongoDB view or an aggregation pipeline that joins Property ← Review ← User in one query, cutting latency by 60%."*
+> *"With more time, I would consolidate the property model used by the final app with the richer Week 11 schema that includes reviews. Then I would denormalize review summaries, like average rating and review count, onto each Property document so the dashboard can render quickly without recalculating them on every request."*
 
 ---
 
@@ -184,7 +184,7 @@ return done(null, createdUser);
 
 ### **Week 12–13 (React UI)**
 **Q:** "How does data flow from the Express API to the React dashboard?"  
-**A:** On component mount, `useEffect` fires a `fetch()` to `/api/properties` (or `/api/admin/stats`), which Express serves from MongoDB. The JSON response updates React state. Then the render tree re-runs, Chart.js re-renders with the new data.
+**A:** Be precise: in Week 12, React `App.jsx` uses `useEffect` to fetch `/properties`, Express returns MongoDB property JSON, React stores it in state, and the page re-renders. In Week 13, the Chart.js dashboard currently reads local `dashboardData.js` arrays, with a TODO showing the planned API replacement. In Week 14, the authenticated dashboard is server-rendered with EJS after `routes/admin.js` queries MongoDB.
 
 **Q:** "Why did you choose Tailwind CSS?"  
 **A:** Rapid luxury styling without custom CSS, responsive utilities like `sm:`, `md:`, and pre-built glassmorphism effects. Plus it compiles to ~40 KB gzipped.

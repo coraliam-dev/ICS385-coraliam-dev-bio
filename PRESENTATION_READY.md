@@ -76,7 +76,7 @@ Your complete **Kai Nani Hospitality Dashboard** — a full-stack system built o
   1. Marketing page (`http://localhost:4173/` or Render URL) — show luxury design + weather feature
   2. Login page (`http://localhost:3000/login` or Render URL) — show local email + Google OAuth button
   3. Dashboard (`http://localhost:3000/admin/dashboard` or Render URL) — show Chart.js analytics + weather data
-  4. Logout — clear session
+  4. Logout — remove authenticated user from the Passport session
 
 ### **Segment 2b: Code Walk-through (1 min)**
 - **Artifact:** Google OAuth verify callback
